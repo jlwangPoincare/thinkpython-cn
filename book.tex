@@ -7368,7 +7368,6 @@ Sussman's {\em Structure and Interpretation of Computer Programs}.
 \end{exercise}
 
 
-%Last time
 \chapter{Iteration 迭代}
 
 \section{Multiple assignment 多次赋值}
@@ -7381,8 +7380,8 @@ make more than one assignment to the same variable.  A
 new assignment makes an existing variable refer to a new
 value (and stop referring to the old value).
 
-如你可能已经发现的，对同一变量进行多次赋值是合法的。
-一个新的赋值使一个已有变量指向一个新的值（并停止指向旧的值）。
+正如你可能已经发现的一样，对同一变量进行多次赋值是合法的。
+一次新的赋值会使一个已有变量指向一个新的值（不再指向旧的值）。
 
 \begin{verbatim}
 bruce = 5
@@ -7399,17 +7398,17 @@ the newline, which is why both outputs
 appear on the same line.
 \index{newline}
 
-程序的输出是{\tt 5 7}，因为{\tt bruce}第一次被打印时，它的值是5，
-第二次值是7。第一条{\tt print}语句结尾的逗号禁止产生新行，
-这也是为什么两个输出出现在同一行上。
+这一程序的输出是{\tt 5 7}，因为第一次打印{\tt bruce}时，它的值是5，
+第二次值是7。至于为什么两个输出出现在同一行，那是因为第一条{\tt print}
+语句结尾的逗号表示不产生新行。
 
 Figure~\ref{fig.assign2} shows what {\bf multiple assignment} looks
 like in a state diagram. 
 \index{state diagram} 
 \index{diagram!state}
 
-图\ref{fig.assign2}显示在一个栈图中，{\bf 多次赋值（multiple assignment）}
-看起来是什么样子。
+图\ref{fig.assign2}展示了{\bf 多次赋值（multiple assignment）}
+在一个栈图中的样子。
 
 With multiple assignment it is especially important to distinguish
 between an assignment operation and a statement of equality.  Because
@@ -7420,7 +7419,7 @@ is not!
 
 有了多次赋值，区分赋值运算和相等语句就特别重要。
 因为Python使用等号（{\tt =}）表示赋值，
-容易将类似{\tt a = b}的语句理解成一个相等语句，但它不是！
+你很容易将类似{\tt a = b}的语句理解成一个相等语句，但它不是！
 
 First, equality is a symmetric relation and assignment is not.  For
 example, in mathematics, if $a=7$ then $7=a$.  But in Python, the
@@ -7435,9 +7434,9 @@ false, for all time.  If $a=b$ now, then $a$ will always equal $b$.
 In Python, an assignment statement can make two variables equal, but
 they don't have to stay that way:
 
-更进一步，在数学中，一个相等语句总是或者为真或者为假。
+更进一步，在数学中，一个相等语句要么为真，要么为假，并永远如此。
 如果现在$a=b$，那么$a$总是等于$b$。
-在Python中，一条赋值语句可以使两个变量相等，但是它们不必总保持那样：
+在Python中，一条赋值语句可以使两个变量相等，但是它们不必总保持相等：
 
 \begin{verbatim}
 a = 5
@@ -7454,7 +7453,7 @@ Although multiple assignment is frequently helpful, you should use it
 with caution.  If the values of variables change frequently, it can
 make the code difficult to read and debug.
 
-虽然多次赋值通常很有用，但是你应该小心使用它。
+尽管多次赋值通常很有用，你还是应该慎用这一方式。
 如果变量的值经常改变，可能使代码很难读和调试。
 
 \begin{figure}
@@ -7485,14 +7484,14 @@ x = x+1
 This means ``get the current value of {\tt x}, add one, and then
 update {\tt x} with the new value.''
 
-这个意思是``获得{\tt x}的当前值，加1，然后用新值更新{\tt x}''。
+这段代码的意思是``获得{\tt x}的当前值，加1，然后用新值更新{\tt x}''。
 
 If you try to update a variable that doesn't exist, you get an
 error, because Python evaluates the right side before it assigns
 a value to {\tt x}:
 
 如果你试图更新一个不存在的变量，那么你会得到一个错误，
-因为Python在给{\tt x}赋值之前，先计算右边的值。
+因为Python在给{\tt x}赋值之前，会先计算右边的值。
 
 \begin{verbatim}
 >>> x = x+1
@@ -7503,7 +7502,7 @@ Before you can update a variable, you have to {\bf initialize}
 it, usually with a simple assignment:
 \index{initialization (before update)}
 
-在你可以更新一个变量之前，你必须{\bf 初始化（initialize）}它，
+在你更新一个变量之前，你必须{\bf 初始化（initialize）}它，
 通常使用一个简单的赋值：
 
 \begin{verbatim}
@@ -7517,7 +7516,7 @@ subtracting 1 is called a {\bf decrement}.
 \index{decrement}
 
 
-通过加1更新一个变量被称作{\bf 递增（increment）}，
+更新一个变量使其加1被称作{\bf 递增（increment）}，
 减1被称作{\bf 递减（decrement）}。
 
 
@@ -7532,8 +7531,8 @@ Computers are often used to automate repetitive tasks.  Repeating
 identical or similar tasks without making errors is something that
 computers do well and people do poorly.
 
-计算机经常被用于自动重复的任务。
-无误地重复相同或者相似的任务是计算能做得很好，而人做得不好的事情。
+计算机经常被用于自动执行重复的任务。
+无误地重复进行相同或者相似的工作，正是计算机能做好，而人做不好的事情。
 
 We have seen two programs, {\tt countdown} and \verb"print_n", that
 use recursion to perform repetition, which is also called {\bf
@@ -7541,16 +7540,16 @@ iteration}.  Because iteration is so common, Python provides several
 language features to make it easier.  One is the {\tt for} statement
 we saw in Section~\ref{repetition}.  We'll get back to that later.
 
-我们已经看过两个程序，{\tt countdown}和\verb"print_n"，它们使用递归来执行重复，
-这也被称作{\bf 迭代（iteration）}。因为迭代是如此常见，
-以至于Python提供了几个语言特性来使它变得容易。
+我们已经见到的两个程序，{\tt countdown}和\verb"print_n"，都使用递归来执行重复。
+重复也被称作{\bf 迭代（iteration）}。因为迭代是如此常见，
+Python提供了几个语言特性来简化它。
 一个是我们在\ref{repetition}节中看到的{\tt for}语句。
-我们后面会回到它。
+我们后面再讨论它。
 
 Another is the {\tt while} statement.  Here is a version of {\tt
 countdown} that uses a {\tt while} statement:
 
-另一个是{\tt while}语句。这是使用{\tt while}语句的{\tt countdown}版本：
+另一个是{\tt while}语句。这是{\tt countdown}使用{\tt while}语句的版本：
 
 \begin{verbatim}
 def countdown(n):
@@ -7566,19 +7565,19 @@ display the value of {\tt n} and then reduce the value of
 {\tt n} by 1.  When you get to 0, display the word {\tt Blastoff!}''
 \index{flow of execution}
 
-你几乎可以作为英语来读{\tt while}语句。
+你几乎可以把{\tt while}语句当成英语来读。
 它的意思是，``当{\tt n}大于0时，显示{\tt n}的值，然后将{\tt n}的值减1。
 当到达0的时候，显示单词{\tt Blastoff!}''。
 
 More formally, here is the flow of execution for a {\tt while} statement:
 
-更正式地，这是{\tt while}语句执行的流程：
+更正式地说，这是{\tt while}语句执行的流程：
 
 \begin{enumerate}
 
 \item Evaluate the condition, yielding {\tt True} or {\tt False}.
 
-求条件的值，产生{\tt True}或者{\tt False}。
+求条件的值，得到{\tt True}或者{\tt False}。
 
 \item If the condition is false, exit the {\tt while} statement
 and continue execution at the next statement.
@@ -7598,7 +7597,7 @@ loops back around to the top.
 \index{loop}
 \index{body}
 
-这类流程被称作{\bf 循环（loop）}，因为第3步循环回顶部。
+这类流程被称作{\bf 循环（loop）}，因为第3步循环回到顶部。
 
 The body of the loop should change the value of one or more variables
 so that eventually the condition becomes false and the loop
@@ -7609,9 +7608,9 @@ scientists is the observation that the directions on shampoo,
 \index{infinite loop}
 \index{loop!infinite}
 
-循环体应该改变一个或多个变量的值，以便最终条件变为假然后循环终止。
-否则，循环永远重复下去，这被称作{\bf 无限循环（infinite loop）}。
-对于计算机科学家一个消遣的无尽来源是观察香波的说明书，
+循环体应该改变一个或多个变量的值，使得条件最终变为假，然后循环终止。
+否则，循环将永远重复下去，这被称作{\bf 无限循环（infinite loop）}。
+一个计算机科学家的乐趣之源是观察洗发液的说明书，
 ``打泡沫，漂洗，重复''，就是无限循环。
 
 In the case of {\tt countdown}, we can prove that the loop
@@ -7623,7 +7622,7 @@ cases, it is not so easy to tell:
 在{\tt countdown}的例子中，我们可以证明循环能终止，
 因为我们知道{\tt n}的值是有限的，
 并且我们可以看到通过循环，{\tt n}的值每次都变小，
-所以最终我们一定获得0。
+所以最终我们一定会到达0。
 在另一个例子中，就不这么简单了：
 
 \begin{verbatim}
@@ -7639,7 +7638,7 @@ def sequence(n):
 The condition for this loop is {\tt n != 1}, so the loop will continue
 until {\tt n} is {\tt 1}, which makes the condition false.
 
-该循环的条件是{\tt n != 1}，所以循环将继续直到{\tt n}是{\tt 1}，
+该循环的条件是{\tt n != 1}，所以循环将持续进行，直到{\tt n}是{\tt 1}，
 这使得条件为假。
 
 Each time through the loop, the program outputs the value of {\tt n}
@@ -7648,10 +7647,10 @@ divided by 2.  If it is odd, the value of {\tt n} is replaced with
 {\tt n*3+1}. For example, if the argument passed
 to {\tt sequence} is 3, the resulting sequence is 3, 10, 5, 16, 8, 4, 2, 1.
 
-每次通过循环，程序输出{\tt n}的值，然后检查它是偶数还是奇数。
-如果是偶数，{\tt n}被2除。如果是奇数，{\tt n}的值用{\tt n*3+1}代替。
-例如，如果船体给{\tt sequence}的实参是3，
-结果序列是3, 10, 5, 16, 8, 4, 2, 1。
+每次循环，程序输出{\tt n}的值，然后检查它是偶数还是奇数。
+如果是偶数，将{\tt n}除以2。如果是奇数，将{\tt n}的值改为{\tt n*3+1}。
+例如，如果传递给{\tt sequence}的实参是3，
+打印出的序列就是3, 10, 5, 16, 8, 4, 2, 1。
 
 Since {\tt n} sometimes increases and sometimes decreases, there is no
 obvious proof that {\tt n} will ever reach 1, or that the program
@@ -7662,18 +7661,18 @@ until it reaches 1. The previous example ends with such a sequence,
 starting with 16.
 \index{Collatz conjecture}
 
-既然{\tt n}有时增大，有时减小，所以没有明显的证明{\tt n}最终会到达1，
-或者程序终止。对于一些特殊的{\tt n}值，我们能够证明终止。
-例如，如果起始值是2的幂指数，那么通过循环，{\tt n}的值每次都是偶数直到它到达1.
-前面的例子以16开始的这样的序列终止。
+因为{\tt n}有时增大，有时减小，所以并没有明显的证据表示{\tt n}最终会到达1，
+换句话说程序会终止。对于一些特殊的{\tt n}值，我们可以证明程序会终止。
+例如，如果起始值是2的幂，那么{\tt n}的值在每次循环都是偶数，直到它减小到1为止。
+前面的例子如果以16开始，就会得到这样的序列。
 
 The hard question is whether we can prove that this program terminates
 for {\em all positive values} of {\tt n}.  So far, no one has
 been able to prove it {\em or} disprove it!  (See
   \url{http://en.wikipedia.org/wiki/Collatz_conjecture}.)
   
-难题是是否我们能够证明该程序对于所有正数{\tt n}都会终止。
-目前为止，没有人能证明它或者否定它！
+不过难题是我们能否证明该程序对于所有正数{\tt n}都会终止。
+目前为止，还没有人能证明它或者否定它！
 （见：\url{http://en.wikipedia.org/wiki/Collatz_conjecture}）。
 
 \begin{exercise}
@@ -7681,10 +7680,13 @@ been able to prove it {\em or} disprove it!  (See
 Rewrite the function \verb"print_n" from
 Section~\ref{recursion} using iteration instead of recursion.
 
+重写\ref{recursion}节的\verb"print_n"函数
+将递归改为迭代。
+
 \end{exercise}
 
 
-\section{{\tt break}}
+\section{{\tt break} {\tt break}语句}
 \index{break statement}
 \index{statement!break}
 
@@ -7692,13 +7694,13 @@ Sometimes you don't know it's time to end a loop until you get half
 way through the body.  In that case you can use the {\tt break}
 statement to jump out of the loop.
 
-有时你到循环的一半才知道该结束循环了。
+有时你到循环的途中才知道循环什么时候该结束了。
 在此情况下，你可以使用{\tt break}语句跳出循环。
 
 For example, suppose you want to take input from the user until they
 type {\tt done}.  You could write:
 
-例如，假设你想接受来自用户的输入直到他们键入{\tt done}。
+例如，假设在用户输入{\tt done}之前，你想一直接受来自用户的输入。
 你可以写成：
 
 \begin{verbatim}
@@ -7714,7 +7716,7 @@ print 'Done!'
 The loop condition is {\tt True}, which is always true, so the
 loop runs until it hits the break statement.
 
-该循环条件是{\tt True}，它总是真的，所以直到遇到{\tt break}语句，
+该循环条件是{\tt True}，它总是为真，所以在遇到{\tt break}语句之前，
 循环将一直运行下去。
 
 Each time through, it prompts the user with an angle bracket.
@@ -7722,9 +7724,9 @@ If the user types {\tt done}, the {\tt break} statement exits
 the loop.  Otherwise the program echoes whatever the user types
 and goes back to the top of the loop.  Here's a sample run:
 
-每次循环，它用一个三角括号提示用户。
-如果用户键入{\tt done}，{\tt break}语句退出循环。
-否则程序回应用户键入的任何东西并且回到循环的顶部。
+每次循环，它用一个尖括号提示用户输入。
+如果用户键入{\tt done}，{\tt break}语句将退出循环。
+否则程序打印出用户键入的任何内容并且回到循环的顶部。
 这是一个运行样例：
 
 \begin{verbatim}
@@ -7741,10 +7743,11 @@ top) and you can express the stop condition affirmatively
 until that happens.'').
 
 这种写{\tt while}循环的方法很常见，因为你可以在循环中任何位置检查条件
-（不是仅在顶部）并且你可以积极地表达停止条件（``当此发生时停止''），
-而不是消极地（``继续运行直到其发生''）。
+（不是仅在顶部）并且你可以主动地表达停止条件（``当此发生时停止''），
+而不是被动地（``继续运行直到其发生''）。
 
 
+%Last time
 \section{Square roots 平方根}
 \label{squareroot}
 \index{square root}
