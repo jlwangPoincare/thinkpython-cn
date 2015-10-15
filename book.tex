@@ -7747,7 +7747,6 @@ until that happens.'').
 而不是被动地（``继续运行直到其发生''）。
 
 
-%Last time
 \section{Square roots 平方根}
 \label{squareroot}
 \index{square root}
@@ -7757,7 +7756,7 @@ numerical results by starting with an approximate answer and
 iteratively improving it.
 \index{Newton's method}
 
-循环经常被用于计算数值结果的程序中，其开始于一个估计答案并迭代地改进它。
+循环经常被用于数值计算的程序中，其开始于一个近似结果并迭代地改进它。
 
 For example, one way of computing square roots is Newton's method.
 Suppose that you want to know the square root of $a$.  If you start
@@ -7765,13 +7764,13 @@ with almost any estimate, $x$, you can compute a better
 estimate with the following formula:
 
 例如，一种计算平方根的方法是牛顿法。假设你想知道$a$的平方根。
-如果你用任意一个估计值$x$开始，你可以用下面的公式计算一个更好的估计值：
+如果你用任意一个近似值$x$开始，你可以用下面的公式计算一个更好的近似值：
 
 \[ y = \frac{x + a/x}{2} \]
 %
 For example, if $a$ is 4 and $x$ is 3:
 
-例如，如果$a$是4，$x$是3：
+例如，$a$是4，$x$是3：
 
 \begin{verbatim}
 >>> a = 4.0
@@ -7784,8 +7783,8 @@ For example, if $a$ is 4 and $x$ is 3:
 Which is closer to the correct answer ($\sqrt{4} = 2$).  If we
 repeat the process with the new estimate, it gets even closer:
 
-这和正确答案（$\sqrt{4} = 2$）更接近了。
-如果我们用这个新的估计重复这个过程，它甚至更进了：
+这离正确答案（$\sqrt{4} = 2$）更接近了。
+如果我们用这个新的近似值重复这个过程，它就会更接近：
 
 \begin{verbatim}
 >>> x = y
@@ -7797,7 +7796,7 @@ repeat the process with the new estimate, it gets even closer:
 After a few more updates, the estimate is almost exact:
 \index{update}
 
-更多次的更新后，估计几乎是精确的：
+再来几次更新后，近似值几乎是精确的：
 
 \begin{verbatim}
 >>> x = y
@@ -7816,7 +7815,7 @@ because the estimate
 stops changing:
 
 一般来讲，我们事先不知道获得正确的答案需要多少步，
-但是我们知道什么时候获得正确答案，因为估计值不再变化了：
+但是我们得到正确答案时我们就知道是正确答案了，因为近似值不再变化了：
 
 \begin{verbatim}
 >>> x = y
@@ -7833,8 +7832,8 @@ When {\tt y == x}, we can stop.  Here is a loop that starts
 with an initial estimate, {\tt x}, and improves it until it
 stops changing:
 
-当{\tt y == x}时，我们可以停止。
-下面是以一个初始估计{\tt x}开始的循环，然后改进它直到它停止改变
+当{\tt y == x}时，我们就可以停下了。
+下面是一个循环的例子，以初始估计{\tt x}开始，然后改进它直到不再改变：
 
 \begin{verbatim}
 while True:
@@ -7853,16 +7852,17 @@ $\sqrt{2}$, can't be represented exactly with a {\tt float}.
 \index{floating-point}
 \index{epsilon}
 
-对于大多数{\tt a}其工作的很好，但是一般来讲测试{\tt float}相等很危险。
-浮点数值只是估计正确的：大多数有理数，像$1/3$，以及无理数，
-像$\sqrt{2}$不能用{\tt float}精确地表示。
+对于大多数{\tt a}此程序能正常运行，但是一般来讲试图测试{\tt float}值是否相等，
+是很危险的事。
+浮点数值只是近似正确的：大多数有理数，例如$1/3$，以及无理数，
+例如$\sqrt{2}$不能用{\tt float}精确地表示。
 
 Rather than checking whether {\tt x} and {\tt y} are exactly equal, it
 is safer to use the built-in function {\tt abs} to compute the
 absolute value, or magnitude, of the difference between them:
 
-与其检查{\tt x}和{\tt y}是否精确地相等，
-不如使用内建函数{\tt abs}来计算它们之间不同的绝对或者数量级更安全。
+与其检查{\tt x}和{\tt y}是否精确相等，
+不如使用内建函数{\tt abs}来计算它们差值的绝对值，或者说数量级，更加安全。
 
 \begin{verbatim}
     if abs(y-x) < epsilon:
@@ -7872,7 +7872,7 @@ absolute value, or magnitude, of the difference between them:
 Where \verb"epsilon" has a value like {\tt 0.0000001} that
 determines how close is close enough.
 
-其中\verb"epsilon"的值类似{\tt 0.0000001}，其决定多近是足够近了。
+其中\verb"epsilon"使用类似{\tt 0.0000001}这样的值，来决定多近是足够近了。
 
 \begin{exercise}
 
@@ -7880,6 +7880,9 @@ Encapsulate this loop in a function called \verb"square_root"
 that takes {\tt a} as a parameter, chooses a reasonable
 value of {\tt x}, and returns an estimate of the square root
 of {\tt a}.
+
+将这一循环封装在一个名为\verb"square_root"的函数中，其接受形参
+{\tt a}，选择一个合理的{\tt x}值，然后返回{\tt a}的平方根的近似值。
 \index{encapsulation}
 
 \end{exercise}
@@ -7893,7 +7896,7 @@ mechanical process for solving a category of problems (in this
 case, computing square roots).
 
 牛顿法是一个{\bf 算法（algorithm）}的例子：
-它是解决一类问题的机械化的过程（此例中是计算平方根）。
+算法是解决一类问题的机械化的过程（此例中是计算平方根）。
 
 It is not easy to define an algorithm.  It might help to start
 with something that is not an algorithm.  When you learned
@@ -7901,8 +7904,8 @@ to multiply single-digit numbers, you probably memorized the
 multiplication table.  In effect, you memorized 100 specific solutions.
 That kind of knowledge is not algorithmic.
 
-定义算法并不容易。从一些不是算法的东西开始可能有帮助。
-当你学习一位数相乘的时候，你可能记住乘法表。
+定义算法并不容易。以``什么东西不是算法''开始可能会有帮助。
+当你学习十以内乘法的时候，你可能背下了乘法表。
 实际上，你记下100个特定的答案。这类知识不是算法。
 
 But if you were ``lazy,'' you probably cheated by learning a few
@@ -7915,10 +7918,10 @@ single-digit number by 9.  That's an algorithm!
 \index{subtraction!with borrowing}
 \index{borrowing, subtraction with}
 
-但是如果你``很懒''，你可能通过学习一些技巧来欺骗。
-例如，为了计算$n$和9的乘积，你可以写下$n-1$作为第一位，
-$10-n$作为第二位。这种技巧是任意位数字和9相乘的一般解决方案。
-这是一个算法！
+但是如果你很``懒''，你可能学习了一些技巧来作弊。
+例如，为了计算$n$和9的乘积，你可以在十位数写上$n-1$，
+个位数写上$10-n$。这种技巧是任意十以内数字和9相乘的通用解决方案。
+这就是一个算法！
 
 Similarly, the techniques you learned for addition with carrying,
 subtraction with borrowing, and long division are all algorithms.  One
@@ -7926,23 +7929,23 @@ of the characteristics of algorithms is that they do not require any
 intelligence to carry out.  They are mechanical processes in which
 each step follows from the last according to a simple set of rules.
 
-类似的，你学过的进位加法、借位减法以及长除技术都是算法。
-算法的特点之一是它们不需要任何智慧来执行。
-它们是机械的过程，每一步根据简单的规则集，跟着上一步执行。
+类似的，你学过的带进位的加法、带借位的减法以及竖式除法都是算法。
+算法的特点之一是它们不需要任何智慧就能执行。
+它们是机械的过程，每进行一步之后，根据简单的规则集进行下一步。
 
 In my opinion, it is embarrassing that humans spend so much time in
 school learning to execute algorithms that, quite literally, require
 no intelligence.
 
-在我看来，人们在学校里花费如此大量的时间学习执行直白的，
-不需要智力的算法真是很尴尬
+在我看来，人们在学校里花费如此多的时间学习执行直白的，
+不需要智力的算法真是件很尴尬的事。
 
 On the other hand, the process of designing algorithms is interesting,
 intellectually challenging, and a central part of what we call
 programming.
 
-另一方面，设计算法的过程是很有趣的，
-充满智力的挑战并且是编程的核心部分。
+不过，设计算法的过程正好相反，它既有趣，又挑战你的智力，
+它正是编程的核心部分。
 
 Some of the things that people do naturally, without difficulty or
 conscious thought, are the hardest to express algorithmically.
@@ -7950,9 +7953,9 @@ Understanding natural language is a good example.  We all do it, but
 so far no one has been able to explain {\em how} we do it, at least
 not in the form of an algorithm.
 
-一些人们做得很自然、没什么难度或者有意识的思考的事情是最难用算法表示的。
-理解自然语言是一个很好的例子。
-我们都能做它，但是目前为止，没有人能解释我们是如何做的，
+一些人类自然而然，毫无困难或者是无意识间做到的事情是最难用算法表示的。
+自然语言理解是一个很好的例子。
+我们都能做到，但是目前为止，没有人能解释我们是如何做到的，
 至少不能以算法的形式解释。
 
 
@@ -7964,14 +7967,14 @@ make an error and more place for bugs to hide.
 \index{debugging!by bisection}
 \index{bisection, debugging by}
 
-当你开始写较大的程序的时候，你可能发现你自己花了太多的时间在调试上。
+当你开始写较大的程序时，你可能发现你自己在调试上花的时间越来越多了。
 更多的代码意味着更多的犯错机会以及更多隐藏错误的地方。
 
 One way to cut your debugging time is ``debugging by bisection.''
 For example, if there are 100 lines in your program and you
 check them one at a time, it would take 100 steps.
 
-一种减少调试时间的方法是``对分调试''。
+一种减少调试时间的方法是``二分调试''。
 例如，如果你的程序有100行，你每次检查一行，这将花费100步。
 
 Instead, try to break the problem in half.  Look at the middle
@@ -7979,8 +7982,9 @@ of the program, or near it, for an intermediate value you
 can check.  Add a {\tt print} statement (or something else
 that has a verifiable effect) and run the program.
 
-相反，试着将问题对半分。在程序的中间部分或则附近看一下你可以检查的中间值。
-增加一条{\tt print}语句（或则其它有验证功能的东西）并运行程序。
+相反，试着把问题一分为二。在程序的中间部分，或者接近中间的地方，
+看一下你可以检查的中间值。
+增加一条{\tt print}语句（或者其它有验证功能的东西）再运行程序。
 
 If the mid-point check is incorrect, there must be a problem in the
 first half of the program.  If it is correct, the problem is
@@ -7993,8 +7997,8 @@ Every time you perform a check like this, you halve the number of
 lines you have to search.  After six steps (which is fewer than 100),
 you would be down to one or two lines of code, at least in theory.
 
-每次你执行类似的检查，你将你需要搜索的行数分了一半。
-经过6步（少于100），至少在理论上你将下到一两行代码。
+每次你执行类似的检查，你就将你需要搜索的行数减少了一半。
+经过6步（这比100少多了），你将只剩下一两行代码，至少在理论上。
 
 In practice it is not always clear what
 the ``middle of the program'' is and not always possible to
@@ -8006,9 +8010,9 @@ think the chances are about the same that the bug is before
 or after the check.
 
 在实践中，``程序的中间部分''是什么通常不是很清楚，
-并且检查它也不总是可能的。数行数并找到精确的中间点也没什么意义。
+并且检查它也不总是可行的。数行数并找到精确的中间点没有意义。
 相反，要考虑程序中可能犯错的地方以及容易设置检查点的地方。
-然后选择一个你认为错误会在其之前或之后的检查点。
+然后选择一个你认为错误在其之前或之后的机会差不多的地方进行检查。
 
 \section{Glossary 术语表}
 
@@ -8041,6 +8045,7 @@ either a recursive function call or a loop.
 \item[infinite loop（无限循环）:] A loop in which the terminating condition is
 never satisfied.
 \index{infinite loop}
+% 要不要翻译成死循环呢？
 
 \end{description}
 
@@ -8053,6 +8058,9 @@ never satisfied.
 To test the square root algorithm in this chapter, you could compare
 it with {\tt math.sqrt}.  Write a function named \verb"test_square_root"
 that prints a table like this:
+
+为了测试本章中的平方根算法，你可以将它和{\tt math.sqrt}
+进行对比。写一个能够打印下表的\verb"test_square_root"函数：
 
 \begin{verbatim}
 1.0 1.0           1.0           0.0
@@ -8072,6 +8080,9 @@ the square root of $a$ computed with the function from
 Section~\ref{squareroot}; the third column is the square root computed
 by {\tt math.sqrt}; the fourth column is the absolute value
 of the difference between the two estimates.
+
+第一列是数$a$；第二列是用\ref{squareroot}节的函数算出的$a$的平方根；
+第三列是用{\tt math.sqrt}算出的平方根；第四列是这两个近似值之间的差。
 \end{exercise}
 
 
@@ -8081,6 +8092,9 @@ of the difference between the two estimates.
 
 The built-in function {\tt eval} takes a string and evaluates
 it using the Python interpreter.  For example:
+
+内建函数{\tt eval}能够接受一个字符串，并使用Python解释器求出它的值。
+例如：
 
 \begin{verbatim}
 >>> eval('1 + 2 * 3')
@@ -8096,8 +8110,13 @@ Write a function called \verb"eval_loop" that iteratively
 prompts the user, takes the resulting input and evaluates
 it using {\tt eval}, and prints the result.
 
+写一个名为\verb"eval_loop"的函数，其不断重复提示用户、接受输入、使用
+{\tt eval}求值、打印结果这一过程。
+
 It should continue until the user enters \verb"'done'", and then
 return the value of the last expression it evaluated.
+
+此程序不断循环，直到用户输入\verb"'done'"为止，然后返回其最后一次计算的表达式结果。
 
 \end{exercise}
 
@@ -8109,6 +8128,9 @@ The mathematician Srinivasa Ramanujan found an
 infinite series
 that can be used to generate a numerical
 approximation of $\pi$:
+
+数学家Srinivasa Ramanujan发现了一个可用于生成$\pi$的
+近似值的无穷级数：
 \index{pi}
 
 \[ \frac{1}{\pi} = \frac{2\sqrt{2}}{9801} 
@@ -8120,7 +8142,14 @@ loop to compute terms of the summation until the last term is
 smaller than {\tt 1e-15} (which is Python notation for $10^{-15}$).
 You can check the result by comparing it to {\tt math.pi}.
 
+写一个名为\verb"estimate_pi"的函数，使用这一形式计算并返回$\pi$的值。
+你应当使用{\tt while}循环来计算和式中的每一项，直到最终一项小于{\tt 1e-15}
+（这是Python中表示$10^{-15}$的记号）。
+你可以将其与{\tt math.pi}比较来检查结果。
+
 Solution: \url{http://thinkpython.com/code/pi.py}.
+
+解答在：\url{http://thinkpython.com/code/pi.py}。
 
 \end{exercise}
 
@@ -8151,18 +8180,18 @@ The second statement selects character number 1 from {\tt
 fruit} and assigns it to {\tt letter}.  
 \index{index}
 
-第2条语句从{\tt fruit}中选择编号为1的字符并将它赋给{\tt letter}。
+第二条语句选择{\tt fruit}中编号为1的字符并将它赋给{\tt letter}。
 
 The expression in brackets is called an {\bf index}.  
 The index indicates which character in the sequence you
 want (hence the name).
 
 括号中的表达式被称作{\bf 索引（index）}。
-索引指出在序列中你想要哪个字符（因此而得名）。
+索引指示在序列中你想要哪个字符（因此而得名）。
 
 But you might not get what you expect:
 
-但是你可能不会获得你期望的东西：
+但是你得到的可能和你的期望不一致：
 
 \begin{verbatim}
 >>> print letter
@@ -8174,8 +8203,8 @@ For most people, the first letter of \verb"'banana'" is {\tt b}, not
 beginning of the string, and the offset of the first letter is zero.
 
 对于大多数人，\verb"'banana'"的第一个字母是{\tt b}而不是{\tt a}。
-但是对于计算机科学家，索引是从字符串开始的偏移量，
-并且第一个字母的偏移量是0。
+但是对于计算机科学家来说，索引是从字符串开头处算起的偏移量，
+第一个字母的偏移量是0。
 
 \begin{verbatim}
 >>> letter = fruit[0]
@@ -8199,8 +8228,8 @@ get:
 \index{exception!TypeError}
 \index{TypeError}
 
-你可以使用任何表达式，包括变量名和运算符，都可以做为索引，
-但是索引的值必须是整数。否则你获得：
+你可以使用任何包含变量名和运算符的表达式，来做为索引，
+但是索引的值必须是整数。否则你会获得：
 
 \begin{verbatim}
 >>> letter = fruit[1.5]
@@ -8208,7 +8237,7 @@ TypeError: string indices must be integers
 \end{verbatim}
 %
 
-\section{{\tt len}}
+\section{{\tt len} {\tt len}函数}
 \index{len function}
 \index{function!len}
 
@@ -8241,9 +8270,9 @@ The reason for the {\tt IndexError} is that there is no letter in {\tt
 six letters are numbered 0 to 5.  To get the last character, you have
 to subtract 1 from {\tt length}:
 
-{\tt IndexError}的理由是在{\tt 'banana'}中没有索引为6的字母。
-既然我们从0开始数数，6个字母的编号是0到5。
-为了获得最后一个字符，你必须从{\tt length}中减1。
+{\tt IndexError}的原因是在{\tt 'banana'}中没有索引为6的字母。
+由于我们从零开始数数，六个字母的编号是0到5。
+为了获得最后一个字符，你必须从{\tt length}中减1：
 
 \begin{verbatim}
 >>> last = fruit[length-1]
@@ -8257,7 +8286,7 @@ letter, {\tt fruit[-2]} yields the second to last, and so on.
 \index{index!negative}
 \index{negative index}
 
-另一种作法是你可以使用负索引，其从字符串的结尾往后数。
+或者，你可以使用负数索引，从字符串的结尾往回数。
 表达式{\tt fruit[-1]}产生最后一个字母，{\tt fruit[-2]}产生倒数第二个字母，等等。
 
 
@@ -8276,9 +8305,9 @@ turn, do something to it, and continue until the end.  This pattern of
 processing is called a {\bf traversal}.  One way to write a traversal
 is with a {\tt while} loop:
 
-许多计算每次处理一个字符串的字符。
-它们经常从头开始，依次选择每个字符，对其做一些工作，然后继续直到结束。
-词处理模式被称作{\bf 遍历（traversal）}。
+许多计算都需要将处理字符串的工作按照逐个字符进行。
+它们经常从开头开始，依次选择每个字符，对其做一些工作，然后如此继续直到结束。
+此处理模式被称作{\bf 遍历（traversal）}。
 一种写遍历的方法是用{\tt while}循环：
 
 \begin{verbatim}
@@ -8296,16 +8325,19 @@ condition is false, and the body of the loop is not executed.  The
 last character accessed is the one with the index {\tt len(fruit)-1},
 which is the last character in the string.
 
-该循环遍历字符串并显示在每行显示一个字符串。
+该循环遍历字符串并将每个字母分行显示。
 该循环的条件是{\tt index < len(fruit)}，所以当{\tt index}和字符串的长度相等时，
-条件为假，并且循环体不被执行。
+条件为假，循环体不再执行。
 被访问的最后一个字符的索引为{\tt len(fruit)-1}，
-这是字符串的最后一个字符。
+正是字符串的最后一个字符。
 
 \begin{exercise}
 
 Write a function that takes a string as an argument
 and displays the letters backward, one per line.
+
+编写一个函数，接受一个字符串作为实参，然后从后向前
+分行显示每个字母。
 
 \end{exercise}
 
@@ -8325,8 +8357,8 @@ left.
 \index{abecedarian}
 \index{McCloskey, Robert}
 
-每次通过循环，字符串中的下一个字符被赋给变量{\tt char}。
-循环继续，直到没有剩余的字符串了。
+每次通过循环体时，字符串中的下一个字符被赋给变量{\tt char}。
+循环持续执行，直到没有剩余的字符。
 
 The following example shows how to use concatenation (string addition)
 and a {\tt for} loop to generate an abecedarian series (that is, in
@@ -8335,9 +8367,10 @@ Way for Ducklings}, the names of the ducklings are Jack, Kack, Lack,
 Mack, Nack, Ouack, Pack, and Quack.  This loop outputs these names in
 order:
 
-下面的例子显示如何使用叠加（字符串加）和{\tt for}循环生成一个字母系列（以字母序）。
+下面的例子展示如何使用级联（字符串加法）和{\tt for}循环
+生成一个字母顺序系列（即，按照字母表顺序）。
 在Robert McCloskey的书《Make Way for Ducklings》中，
-小鸭子的名字是Jack, Kack, Lack, Mack, Nack, Ouack, Pack, and Quack。
+小鸭子的名字是Jack，Kack，Lack，Mack，Nack，Ouack，Pack，以及Quack。
 此循环按顺序输出这些名字：
 
 \begin{verbatim}
@@ -8366,11 +8399,13 @@ Qack
 Of course, that's not quite right because ``Ouack'' and
 ``Quack'' are misspelled.
 
-当然，这不是非常正确，因为``Ouack''和``Quack''被错误拼写了。
+当然，这不是非常正确，因为``Ouack''和``Quack''拼写错了。
 
 \begin{exercise}
 
 Modify the program to fix this error.
+
+修改程序来修正这一错误。
 
 \end{exercise}
 
@@ -8388,7 +8423,7 @@ A segment of a string is called a {\bf slice}.  Selecting a slice is
 similar to selecting a character:
 
 一段字符串被称作{\bf 切片（slice）}。
-选择一个切片类似于选择一个字符：
+选择一个切片与选择一个字符很类似：
 
 \begin{verbatim}
 >>> s = 'Monty Python'
@@ -8404,9 +8439,9 @@ excluding the last.  This behavior is counterintuitive, but it might
 help to imagine the indices pointing {\em between} the
 characters, as in Figure~\ref{fig.banana}.
 
-{\tt [n:m]}操作符返回从第n个字符到第m个字符的部分字符串，
-包括第一个，但是不包括最后一个。
-这个行为违反直觉，但是它可能会帮助想象指向这两个字符之间的索引，
+{\tt [n:m]}操作符返回字符串从第n个字符到第m个字符的那一部分，
+包括前者，但是不包括后者。
+这个行为违反直觉，不过想象索引指向的位置是两个字符之间可能会有帮助，
 如图\ref{fig.banana}。
 
 \begin{figure}
@@ -8421,7 +8456,7 @@ If you omit the first index (before the colon), the slice starts at
 the beginning of the string.  If you omit the second index, the slice
 goes to the end of the string:
 
-如果你省略第一个索引（冒号前面的），切片起始于字符串开始。
+如果你省略第一个索引（冒号前面的），切片起始于字符串开头。
 如果你省略第二个索引，切片一直到字符串结尾：
 
 \begin{verbatim}
@@ -8436,8 +8471,8 @@ If the first index is greater than or equal to the second the result
 is an {\bf empty string}, represented by two quotation marks:
 \index{quotation mark}
 
-如果第一个索引大于或等于第二个，结果是{\bf 空字符串（empty string）}，
-表示为两个引号：
+如果第一个索引大于等于第二个，结果会是{\bf 空字符串（empty string）}，
+以两个引号表示：
 
 \begin{verbatim}
 >>> fruit = 'banana'
@@ -8448,13 +8483,15 @@ is an {\bf empty string}, represented by two quotation marks:
 An empty string contains no characters and has length 0, but other
 than that, it is the same as any other string.
 
-一个空字符串不包括字符而且长度为0，但除此之外，
+一个空字符串里没有字符且长度为0，但除此之外，
 它和其它任何字符串一样。
 
 \begin{exercise}
 
 Given that {\tt fruit} is a string, what does
 {\tt fruit[:]} mean?
+
+已知{\tt fruit}是一个字符串，那么{\tt fruit[:]}是什么意思？
 \index{copy!slice}
 \index{slice!copy}
 
@@ -8472,7 +8509,7 @@ For example:
 \index{TypeError}
 \index{exception!TypeError}
 
-在一个赋值的左边使用{\tt []}很有诱惑力，意图是改变字符串的一个字符。
+想要改变字符串的一个字符的话，在赋值号的左边使用{\tt []}运算符很有诱惑力。
 例如：
 
 \begin{verbatim}
@@ -8490,18 +8527,18 @@ later.  An {\bf item} is one of the values in a sequence.
 \index{assignment!item}
 \index{immutability}
 
-此例中的``object（对象）''是该字符串，``item（项）''是你要赋值的字符。
-到目前，一个{\bf 对象（object）}和值是同一样的东西，
-但是我们后面将改善此定义。一个{\bf 项（item）}是序列中的一个值。
+此例中的``object（对象）''是该字符串，``item（项）''是你试图赋值的字符。
+目前，一个{\bf 对象（object）}和值是一样的东西，
+不过我们后面将完善此定义。一个{\bf 项（item）}是序列中的一个值。
 
 The reason for the error is that
 strings are {\bf immutable}, which means you can't change an
 existing string.  The best you can do is create a new string
 that is a variation on the original:
 
-此错误的原因是字符串是{\bf 不可变的（immutable）}，
+此错误的原因在于字符串是{\bf 不可变的（immutable）}，
 这意味着你不能改变一个已存在的字符串。
-最好是生成一个新的字符串，它是原字符串的一个变种：
+你的最佳选择只能是生成一个新的字符串，它是原字符串的一个修改版：
 
 \begin{verbatim}
 >>> greeting = 'Hello, world!'
@@ -8515,7 +8552,7 @@ a slice of {\tt greeting}.  It has no effect on
 the original string.
 \index{concatenation}
 
-此例连接一个新的第一个字母到{\tt greeting}的一个切片上。
+此例将一个新的首字母级联到{\tt greeting}的一个切片上。
 它不影响原字符串。
 
 \section{Searching 搜索}
@@ -8545,15 +8582,15 @@ appears.  If the character is not found, the function returns {\tt
 
 在某种意义上，{\tt find}和{\tt []}运算符相反。
 不是接受一个索引并抽取相应的字符，
-它接受一个字符并找到该字符出现的位置的索引。
+它接受一个字符并找到该字符出现位置的索引。
 如果没有找到该字符，函数返回{\tt -1}。
 
 This is the first example we have seen of a {\tt return} statement
 inside a loop.  If {\tt word[index] == letter}, the function breaks
 out of the loop and returns immediately.
 
-这是我们已经见过的第一个{\tt return}语句在循环内部的例子。
-如果{\tt word[index] == letter}，函数停止循环并马上返回。
+这是我们见到的第一个{\tt return}语句在循环内部的例子。
+如果{\tt word[index] == letter}，函数跳出循环并立即返回。
 
 If the character doesn't appear in the string, the program
 exits the loop normally and  returns {\tt -1}.
@@ -8566,7 +8603,7 @@ when we find what we are looking for---is called a {\bf search}.
 \index{search pattern}
 \index{pattern!search}
 
-这种计算的模式---遍历一个序列并在我们找到我们正在找的东西时返回---
+这种计算的模式——遍历一个序列并在我们找到寻求的东西时返回——
 被称作{\bf 搜索（search）}。
 
 \begin{exercise}
@@ -8574,6 +8611,8 @@ when we find what we are looking for---is called a {\bf search}.
 Modify {\tt find} so that it has a
 third parameter, the index in {\tt word} where it should start
 looking.
+
+修改{\tt find}使它拥有第三个形参：{\tt word}中开始搜索的位置索引。
 
 \end{exercise}
 
@@ -8605,9 +8644,9 @@ incremented each time an {\tt a} is found.
 When the loop exits, {\tt count}
 contains the result---the total number of {\tt a}'s.
 
-此程序演示另一种被称作{\bf 计数器（counter）}的计算模式。
-变量{\tt count}初始化为0然后每次出现{\tt a}时递增。
-当循环结束时，{\tt count}包含结果---{\tt a}的总数。
+此程序又演示了一种被称作{\bf 计数器（counter）}的计算模式。
+变量{\tt count}初始化为0然后在每次出现{\tt a}时递增。
+当循环结束时，{\tt count}就包含了结果——{\tt a}的总数。
 
 \begin{exercise}
 \index{encapsulation}
@@ -8615,6 +8654,9 @@ contains the result---the total number of {\tt a}'s.
 Encapsulate this code in a function named {\tt
 count}, and generalize it so that it accepts the string and the
 letter as arguments.
+
+将这段代码封装进一个名为{\tt count}的函数，并将其泛化，
+使之接受一个字符串和一个字母的实参。
 \end{exercise}
 
 \begin{exercise}
@@ -8623,6 +8665,8 @@ Rewrite this function so that instead of
 traversing the string, it uses the three-parameter version of {\tt
 find} from the previous section.
 
+将这个函数重写，不要遍历字符串，而是使用前一节的
+三参数{\tt find}函数。
 \end{exercise}
 
 
@@ -8635,14 +8679,14 @@ all uppercase letters:
 \index{method}
 \index{string!method}
 
-{\bf 方法（method）}和函数类似---接受实参并返回一个值---但是语法不同。
-例如，{\bf upper}方法接受一个字符串并返回一个新的都是大写字母的字符串：
+{\bf 方法（method）}和函数类似——接受实参并返回一个值——但是语法不同。
+例如，{\bf upper}方法接受一个字符串并返回一个新的所有字母都被大写了的字符串：
 
 Instead of the function syntax {\tt upper(word)}, it uses
 the method syntax {\tt word.upper()}.
 \index{dot notation}
 
-不是用函数的语法{\tt upper(word)}，而是用方法的语法{\tt word.upper()}。
+这里使用的是方法的语法{\tt word.upper()}，而不是函数的语法{\tt upper(word)}。
 
 \begin{verbatim}
 >>> word = 'banana'
@@ -8657,21 +8701,21 @@ word}.  The empty parentheses indicate that this method takes no
 argument.
 \index{parentheses!empty}
 
-点标记法的形式指出方法的名字，{\tt upper}，以及应用该方法的字符串的名字，{\tt word}。
-空括号指出该方法不接受实参。
+点标记法的形式指定了方法的名字，{\tt upper}，以及应用该方法的字符串的名字，{\tt word}。
+空括号表示该方法不接受实参。
 
 A method call is called an {\bf invocation}; in this case, we would
 say that we are invoking {\tt upper} on the {\tt word}.
 \index{invocation}
 
 方法的调用被称作{\bf 调用（invocation）}，在此例中，
-我们说我们整在{\tt word}上调用{\tt upper}。
+我们说我们正在{\tt word}上调用{\tt upper}。
 
 As it turns out, there is a string method named {\tt find} that
 is remarkably similar to the function we wrote:
 
-事实上，有一个被称为{\tt find}的字符串方法，
-其和我们写的函数异常相似：
+事实上，正有一个名为{\tt find}的字符串方法，
+其与我们写的函数异常相似：
 
 \begin{verbatim}
 >>> word = 'banana'
@@ -8699,7 +8743,7 @@ It can take as a second argument the index where it should start:
 \index{optional argument}
 \index{argument!optional}
 
-它可以接受从何处开始的索引作为第二个实参：
+它可以接受第二个实参，开始处的索引：
 
 \begin{verbatim}
 >>> word.find('na', 3)
@@ -8708,7 +8752,7 @@ It can take as a second argument the index where it should start:
 %
 And as a third argument the index where it should stop:
 
-在哪个索引结束作为第三个实参。
+以及第三个实参，停止寻找处的索引。
 
 \begin{verbatim}
 >>> name = 'bob'
@@ -8720,7 +8764,7 @@ This search fails because {\tt b} does not
 appear in the index range from {\tt 1} to {\tt 2} (not including {\tt
 2}).
 
-此搜索失败是因为{\tt b}没有出现在从{\tt 1}到{\tt 2}的索引之间
+此搜索失败是因为{\tt b}没有出现在{\tt 1}到{\tt 2}的索引范围中
 （不包括{\tt 2}）。
 
 
@@ -8733,6 +8777,9 @@ to the function in the previous exercise.  Read the documentation
 of this method
 and write an invocation that counts the number of {\tt a}s
 in \verb"'banana'".
+
+有一个名为{\tt count}的字符串方法，与先前练习中的函数非常类似。
+阅读此方法的文档，并写一个方法调用来数出\verb"'banana'"中{\tt a}的个数。
 \end{exercise}
 
 
@@ -8746,11 +8793,19 @@ might want to experiment with some of them to make sure
 you understand how they work.  {\tt strip} and
 {\tt replace} are particularly useful.
 
+在\url{docs.python.org/lib/string-methods.html}阅读字符串方法的文档。
+你可能想针对其中一些做些实验，以确保你懂得它们的工作方式。
+{\tt strip}和{\tt replace}特别有用。
+
 The documentation uses a syntax that might be confusing.
 For example, in \verb"find(sub[, start[, end]])", the brackets
 indicate optional arguments.  So {\tt sub} is required, but
 {\tt start} is optional, and if you include {\tt start},
 then {\tt end} is optional.
+
+这些文档使用了一种可能有些难懂的语法。例如，\verb"find(sub[, start[, end]])"
+中的方括号表示的是可选实参。因此{\tt sub}是必须的，不过{\tt start}是可选的，
+如果你写上了{\tt start}，那么{\tt end}又是可选的。
 \end{exercise}
 
 
@@ -8765,7 +8820,7 @@ The word {\tt in} is a boolean operator that takes two strings and
 returns {\tt True} if the first appears as a substring in the second:
 
 单词{\tt in}是一个布尔运算符，其接受两个字符串，
-如果第一个作为子串出现在第二个中则返回{\tt True}：
+如果第一个在第二个中作为子串出现，则返回{\tt True}：
 
 \begin{verbatim}
 >>> 'a' in 'banana'
@@ -8777,7 +8832,7 @@ False
 For example, the following function prints all the
 letters from {\tt word1} that also appear in {\tt word2}:
 
-例如，下面的函数打印即出现在{\tt word1}中也出现在{\tt word2}中的字母：
+例如，下面的函数打印既出现在{\tt word1}中也出现在{\tt word2}中的字母：
 
 \begin{verbatim}
 def in_both(word1, word2):
@@ -8792,12 +8847,12 @@ this loop, ``for (each) letter in (the first) word, if (the) letter
 (appears) in (the second) word, print (the) letter.''
 
 使用精心挑选的变量名，Python有时候读起来像是英语。
-你可以读此循环，``对于（每个）在（第一个）单词中的字母，
+你可以这么读这个循环，``对于（每个）在（第一个）单词中的字母，
 如果（该）字母 （出现）在（第二个）单词中，打印（该）字母''。
 
 Here's what you get if you compare apples and oranges:
 
-如果你比较apples和oranges，这是你获得的东西：
+如果你比较apples和oranges，这是你的结果：
 
 \begin{verbatim}
 >>> in_both('apples', 'oranges')
@@ -8807,13 +8862,14 @@ s
 \end{verbatim}
 %
 
+%Last time
 \section{String comparison 字符串比较}
 \index{string!comparison}
 \index{comparison!string}
 
 The relational operators work on strings.  To see if two strings are equal:
 
-关系运算符在字符串上也工作。为了看两个字符串是否相等：
+关系运算符在字符串上也能工作。为了看两个字符串是否相等：
 
 \begin{verbatim}
 if word == 'banana':
