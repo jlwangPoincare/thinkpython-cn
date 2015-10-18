@@ -8852,7 +8852,7 @@ this loop, ``for (each) letter in (the first) word, if (the) letter
 
 Here's what you get if you compare apples and oranges:
 
-如果你比较apples和oranges，这是你的结果：
+这是比较apples和oranges的结果：
 
 \begin{verbatim}
 >>> in_both('apples', 'oranges')
@@ -8862,14 +8862,13 @@ s
 \end{verbatim}
 %
 
-%Last time
 \section{String comparison 字符串比较}
 \index{string!comparison}
 \index{comparison!string}
 
 The relational operators work on strings.  To see if two strings are equal:
 
-关系运算符在字符串上也能工作。为了看两个字符串是否相等：
+关系运算符也能用于字符串。为了看两个字符串是否相等：
 
 \begin{verbatim}
 if word == 'banana':
@@ -8879,7 +8878,7 @@ if word == 'banana':
 Other relational operations are useful for putting words in alphabetical
 order:
 
-其它的关系运算符对于按字母序放置单词也很有用：
+其它的关系运算符则可以用于将单词按字母顺序排列：
 
 \begin{verbatim}
 if word < 'banana':
@@ -8894,8 +8893,8 @@ Python does not handle uppercase and lowercase letters the same way
 that people do.  All the uppercase letters come before all the
 lowercase letters, so:
 
-Python用和人不同的方式处理大写和小写字母。
-所有的大写字母出现在所有小写字母之前，所以：
+Python处理大写和小写字母的方式和人不同。
+所有的大写字母排在所有小写字母之前，所以：
 
 \begin{verbatim}
 Your word, Pineapple, comes before banana.
@@ -8906,9 +8905,10 @@ standard format, such as all lowercase, before performing the
 comparison.  Keep that in mind in case you have to defend yourself
 against a man armed with a Pineapple.
 
-解决此问题的通常的方式是在执行比较之前，
-将字符串转化为标准格式，例如都是小写字母。
-一旦你必须保卫自己免受一名手持菠萝的男子的袭击，记住这一点。
+解决此问题的通常方式是，在执行比较之前，
+将字符串转化为标准格式，例如都是小写字母的格式。
+记住这一点，以免将来你在面对一位拿着Pineapple的人时手足无措
+\footnote{译者注：原文作者的幽默}。
 
 \section{Debugging 调试}
 \index{debugging}
@@ -8920,11 +8920,11 @@ right.  Here is a function that is supposed to compare two
 words and return {\tt True} if one of the words is the reverse
 of the other, but it contains two errors:
 
-当你使用索引在一个序列中遍历值的时候，
-正确的获得遍历的开始和结束是一个技巧。
-这是一个函数，其被假设用来比较两个单词，
-如果一个单词是另一个的倒序，则返回真，
-但是它包含两个错误：
+当你用索引在一个序列中遍历值的时候，
+要写对遍历的起点和终点并不容易。
+这是一个函数，其本应当用来比较两个单词，
+如果一个单词是另一个的倒序时返回{\tt True}，
+但是它有两处错误：
 
 \begin{verbatim}
 def is_reverse(word1, word2):
@@ -8953,8 +8953,8 @@ in Section~\ref{guardian}.
 \index{index}
 
 第一条{\tt if}语句检查两个单词是否等长。
-如果不是，我们可以马上返回假，然后对于函数其余的部分，
-我们可以假设单词是等长的。
+如果不是，我们可以马上返回{\tt False}，于是在函数其余的部分中，
+我们就可以假设单词是等长的。
 这是\ref{guardian}节中的监护人模式的一个例子。
 
 {\tt i} and {\tt j} are indices: {\tt i} traverses {\tt word1}
@@ -8963,17 +8963,17 @@ two letters that don't match, we can return {\tt False} immediately.
 If we get through the whole loop and all the letters match, we
 return {\tt True}.
 
-{\tt i}和{\tt j}是索引：{\tt i}向前遍历{\tt word1}，{\tt j}向后遍历{\tt word2}。
-如果我们找到两个不匹配的字母，我们可以立即返回假。
-如果我们通过整个循环并且所有字母都匹配，我们返回真。
+{\tt i}和{\tt j}是索引：{\tt i}正向遍历{\tt word1}，{\tt j}反向遍历{\tt word2}。
+如果我们找到两个不匹配的字母，我们可以立即返回{\tt False}。
+如果我们走遍了整个循环并且所有字母都匹配，我们返回{\tt True}。
 
 If we test this function with the words ``pots'' and ``stop'', we
 expect the return value {\tt True}, but we get an IndexError:
 \index{IndexError}
 \index{exception!IndexError}
 
-如果我们用单词``pots''和``stop''测试该函数，我们期望返回真，
-但是我们得到一个IndexError。
+如果我们用单词``pots''和``stop''测试该函数，我们期望返回值是
+{\tt True}，但我们却得到了IndexError。
 
 \begin{verbatim}
 >>> is_reverse('pots', 'stop')
@@ -8987,7 +8987,7 @@ For debugging this kind of error, my first move is to
 print the values of the indices immediately before the line
 where the error appears.
 
-为了调试该类错误，我的第一步是在错误出现的行之前，马上打印索引的值。
+为了调试该类错误，我的第一步一般是在出现错误的前一行打印索引的值。
 
 \begin{verbatim}
     while j > 0:
@@ -9001,7 +9001,7 @@ where the error appears.
 %
 Now when I run the program again, I get more information:
 
-现在，当我再次运行该程序时，我获得更多的信息：
+现在，当我再次运行该程序时，我就能获得更多的信息：
 
 \begin{verbatim}
 >>> is_reverse('pots', 'stop')
@@ -9017,12 +9017,12 @@ initial value for {\tt j} should be {\tt len(word2)-1}.
 \index{semantic error}
 \index{error!semantic}
 
-第一次通过循环，{\tt j}的值是4，其超出字符串\verb"'pots'"的范围了。
-最后一个字符的索引是3，所以{\tt j}的初始值应该是{\tt len(word2)-1}。
+第一次运行循环时，{\tt j}的值是4，这超出字符串\verb"'pots'"的范围了。
+因为最后一个字符的索引是3，所以{\tt j}的初始值应该是{\tt len(word2)-1}。
 
 If I fix that error and run the program again, I get:
 
-如果我修正了这个错误并重新运行程序，我获得：
+如果我修正了这个错误并重新运行程序时，我获得：
 
 \begin{verbatim}
 >>> is_reverse('pots', 'stop')
@@ -9039,9 +9039,9 @@ iteration, the frame for \verb"is_reverse" is shows in Figure~\ref{fig.state4}.
 \index{state diagram}
 \index{diagram!state}
 
-这次，我获得正确的答案，但是看起来循环只运行了三次，这很奇怪。
-为了更好的理解发生了什么，画出栈图会很有用。
-在第一次循环期间，\verb"is_reverse"的框架显示在图\ref{fig.state4}中。
+这次，我得到了正确的答案，但是看起来循环只运行了三次，这很可疑。
+为了更好的理解发生了什么，画出状态图会很有用。
+图\ref{fig.state4}中显示了，在第一次循环期间，\verb"is_reverse"的框架。
 
 \begin{figure}
 \centerline
@@ -9055,8 +9055,8 @@ I took a little license by arranging the variables in the frame
 and adding dotted lines to show that the values of {\tt i} and
 {\tt j} indicate characters in {\tt word1} and {\tt word2}.
 
-我安排了框图中变量的位置并且增加了虚线展示{\tt i}和{\tt j}的值来指明
-{\tt word1}和{\tt word2}中的字符。
+我花了不少工夫来安排框图中变量的位置，并且增加了虚线表示{\tt i}和{\tt j}的值
+正是指向{\tt word1}和{\tt word2}中的字符。
 
 \begin{exercise}
 \label{isreverse}
@@ -9064,6 +9064,9 @@ and adding dotted lines to show that the values of {\tt i} and
 Starting with this diagram, execute the program on paper, changing the
 values of {\tt i} and {\tt j} during each iteration.  Find and fix the
 second error in this function.
+
+以这个图为起点，请你自己在纸上执行这个程序，在每次循环时改变{\tt i}
+和{\tt j}的值。找到并改正函数中的第二个错误。
 
 \end{exercise}
 
@@ -9134,6 +9137,10 @@ size;'' that is, the number of spaces between successive characters.
 A step size of 2 means every other character; 3 means every third,
 etc.
 
+字符串切片语法中可以有第三个索引，其表示``步长''，即前后两个
+字符之间的距离。步长为2表示每隔一个字符（选择一个）；3表示
+每三个字符，依此类推。
+
 \begin{verbatim}
 >>> fruit = 'banana'
 >>> fruit[0:5:2]
@@ -9142,10 +9149,15 @@ etc.
 
 A step size of -1 goes through the word backwards, so
 the slice \verb"[::-1]" generates a reversed string.
+
+-1的步长表示反过来遍历单词，所以切片\verb"[::-1]"
+会生成一个倒序的字符串。
 \index{palindrome}
 
 Use this idiom to write a one-line version of \verb"is_palindrome"
 from Exercise~\ref{palindrome}.
+
+用这一写法为习题\ref{palindrome}写一个只有一行代码的\verb"is_palindrome"。
 \end{exercise}
 
 
@@ -9155,6 +9167,9 @@ The following functions are all {\em intended} to check whether a
 string contains any lowercase letters, but at least some of them are
 wrong.  For each function, describe what the function actually does
 (assuming that the parameter is a string).
+
+下面的函数都试图检查一个字符串是否含有小写字母，不过其中至少有不止一个
+是错误的。对于每个函数，描述其实际的功能（假设形参的确是字符串）。
 
 \begin{verbatim}
 def any_lowercase1(s):
@@ -9202,13 +9217,23 @@ letter in a word by 13 places.  To rotate a letter means
 to shift it through the alphabet, wrapping around to the beginning if
 necessary, so 'A' shifted by 3 is 'D' and 'Z' shifted by 1 is 'A'.
 
+ROT13是一种较弱的加密方法，其将单词中每个字母``旋转''13个位置。旋转
+一个字母意为将其平移到字母表中别的字母，如果超出范围则从头开始，所以
+'A'平移3位即成为'D'，'Z'平移1位即成为'A'。
+
 Write a function called \verb"rotate_word"
 that takes a string and an integer as parameters, and that returns
 a new string that contains the letters from the original string
 ``rotated'' by the given amount.  
 
+写一个名为\verb"rotate_word"的函数，使用一个字符串和一个整数作为形参，
+返回一个新的字符串，其正是原先字符串中每个字母``旋转''了
+指定量的结果。
+
 For example, ``cheer'' rotated by 7 is ``jolly'' and ``melon'' rotated
 by -10 is ``cubed''.  
+
+例如，``cheer''旋转7位成为``jolly''，而``melon''旋转-10为成为``cubed''。
 
 %For example ``sleep''
 %rotated by 9 is ``bunny'' and ``latex'' rotated by 7 is ``shale''.
@@ -9217,12 +9242,19 @@ You might want to use the built-in functions {\tt ord}, which converts
 a character to a numeric code, and {\tt chr}, which converts numeric
 codes to characters.
 
+你也许会用到内建函数{\tt ord}，它能够将字符转换为数字码，以及
+{\tt chr}，它能将数字码转换成字符。
+
 Potentially offensive jokes on the Internet are sometimes encoded
 in ROT13.  If you are not easily offended, find and decode some
 of them.  Solution: \url{http://thinkpython.com/code/rotate.py}.
 
+网络上有可能令人反感的笑话有时会用ROT13加密。如果你并不会轻易生气，
+去找一些并将它们解码。解答在：\url{http://thinkpython.com/code/rotate.py}。
+
 \end{exercise}
 
+%Last time
 
 \chapter{Case study: word play 案例分析：word play}
 
