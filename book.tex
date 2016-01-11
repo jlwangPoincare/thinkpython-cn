@@ -1688,7 +1688,7 @@ interpreter to display a value on the screen.
 \end{description}
 
 
-\section{Exercises 练习题}
+\section{Exercises 习题}
 
 \begin{exercise}
 
@@ -2605,7 +2605,7 @@ execution of the program.
 \end{description}
 
 
-\section{Exercises}
+\section{Exercises 习题}
 
 \begin{exercise}
 
@@ -3804,7 +3804,7 @@ printed when an exception occurs.
 \end{description}
 
 
-\section{Exercises}
+\section{Exercises 习题}
 
 \begin{exercise}
 \index{len function}
@@ -4231,7 +4231,7 @@ are meant to be fun, but they have a point, too.  While you are
 working on them, think about what the point is.
 
 下面是一系列使用TurtleWorld的练习。
-它们是为了好玩而设计的，但是它们也有想表达的东西。
+它们应该是很有趣的，但是它们也有想表达的东西。
 当你做这些练习的时候，想一想它们想告诉你的是什么。
 
 The following sections have solutions to the exercises, so
@@ -4852,7 +4852,7 @@ the function before it ends.
 \end{description}
 
 
-\section{Exercises}
+\section{Exercises 习题}
 
 \begin{exercise}
 
@@ -5902,7 +5902,7 @@ causes a runtime error.
 
 \end{description}
 
-\section{Exercises}
+\section{Exercises 习题}
 
 \begin{exercise}
 \index{Fermat's Last Theorem}
@@ -7187,7 +7187,7 @@ might cause an error.
 \end{description}
 
 
-\section{Exercises}
+\section{Exercises 习题}
 
 \begin{exercise}
 
@@ -8050,7 +8050,7 @@ never satisfied.
 \end{description}
 
 
-\section{Exercises}
+\section{Exercises 习题}
 
 \begin{exercise}
 \index{algorithm!square root}
@@ -9125,7 +9125,7 @@ using dot notation.
 \end{description}
 
 
-\section{Exercises}
+\section{Exercises 习题}
 
 \begin{exercise}
 \index{step size}
@@ -9249,14 +9249,12 @@ Potentially offensive jokes on the Internet are sometimes encoded
 in ROT13.  If you are not easily offended, find and decode some
 of them.  Solution: \url{http://thinkpython.com/code/rotate.py}.
 
-网络上有可能令人反感的笑话有时会用ROT13加密。如果你并不会轻易生气，
-去找一些并将它们解码。解答在：\url{http://thinkpython.com/code/rotate.py}。
+网络上有可能令人反感的笑话有时会用ROT13加密。如果你不是个容易被惹恼的人，
+可以去找一些并将它们解码。解答在：\url{http://thinkpython.com/code/rotate.py}。
 
 \end{exercise}
 
-%Last time
-
-\chapter{Case study: word play 案例分析：word play}
+\chapter{Case study: word play 案例学习：单词游戏}
 
 \section{Reading word lists 读取单词列表}
 \label{wordlist}
@@ -9274,14 +9272,14 @@ a copy, with the simpler name {\tt words.txt}, from
 \index{Moby Project}
 \index{crosswords}
 
-对于本章的习题，我们需要一个英语单词的列表。
-互联网上有许多单词列表，但是最适合我们目的之一的列表是由
-Grady Ward收集并贡献给公众的，并成为Moby词典项目的一部分
-（见：\url{http://wikipedia.org/wiki/Moby_Project}）。
-它是一个由113,809个填字游戏单词组成的列表，
-也就是在填字游戏以及其它文字有戏中被认为合理的单词。
-在Moby集合中，文件名是{\tt 113809of.fic}，
-你可以从\url{http://thinkpython.com/code/words.txt}下载一个拷贝，
+对于本章的练习题，我们需要一个英语单词列表。
+互联网上有许多单词列表，但是最适合我们使用的列表是由
+Grady Ward整理发布的，它是Moby词典项目的一部分
+（参见：\url{http://wikipedia.org/wiki/Moby_Project}）。
+它包括了113,809个填字游戏单词，
+即在填字游戏以及其它单词游戏中被认为有效的单词。
+在Moby集合中，它的文件名是{\tt 113809of.fic}，
+你可以从\url{http://thinkpython.com/code/words.txt}下载一份拷贝，
 其使用了一个简化的名字{\tt words.txt}。
 
 This file is in plain text, so you can open it with a text
@@ -9295,8 +9293,8 @@ and returns a {\bf file object} you can use to read the file.
 \index{object!file}
 \index{file object}
 
-该文件是纯文本，所以你可以用一个文本编辑器打开它，
-但是你也可以从Python中读它。
+该文件是纯文本，所以你可以用文本编辑器打开，
+不过你也可以用Python读取它。
 内建函数{\tt open}接受文件名作为形参，并返回一个
 {\bf 文件对象（file object）}，你可以使用它读取该文件。
 
@@ -9313,16 +9311,16 @@ reading (as opposed to \verb"'w'" for writing).
 \index{method!readline}
 
 {\tt fin}是输入文件对象的一个常用名。
-模式\verb"'r'"表明该文件为了读取而打开
-（相反，\verb"'w'"是为了写）。
+模式\verb"'r'"表明该文件以读取方式打开
+（相反，\verb"'w'"是以写入方式）。
 
 The file object provides several methods for reading, including
 {\tt readline}, which reads characters from the file
 until it gets to a newline and returns the result as a
 string:
 
-该文件对象为读取提供了几个方法，包括{\tt readline}，
-其从文件中读取字符直到到达新行并将结果作为字符串返回：
+该文件对象拥有几个读取的方法，其中包括{\tt readline}方法，
+其从文件中读取一行字符，并以字符串形式返回结果：
 
 \begin{verbatim}
 >>> fin.readline()
@@ -9334,15 +9332,15 @@ lava.  The sequence \verb"\r\n" represents two whitespace characters,
 a carriage return and a newline, that separate this word from the
 next.
 
-在此列表中，第一个单词是``aa''，它是一种岩浆。
+在此列表中的第一个单词是``aa''，它是一种岩浆。
 序列\verb"\r\n"代表两个空白字符，回车和换行，
 其将此单词和下一个分开。
 
 The file object keeps track of where it is in the file, so
 if you call {\tt readline} again, you get the next word:
 
-此文件对象跟踪它在文件中的位置，
-所以如果你再次调用{\tt readline}，你获得下一个单词：
+文件对象会记录它在文件中所处的位置，
+所以如果你再次调用{\tt readline}，你会获得下一个单词：
 
 \begin{verbatim}
 >>> fin.readline()
@@ -9357,8 +9355,9 @@ we can get rid of it with the string method {\tt strip}:
 \index{method!strip}
 
 下一个单词是``aah''，它是一个完全合法的单词，
-所以不要那样看我。
-或者，如果空格困扰了你，我们可以用字符串方法{\tt strip}删掉它：
+所以不要那样盯着我。
+或者说，如果让你困扰的其实是空白字符，
+我们可以用字符串方法{\tt strip}删掉它：
 
 \begin{verbatim}
 >>> line = fin.readline()
@@ -9390,16 +9389,18 @@ Write a program that reads {\tt words.txt} and prints only the
 words with more than 20 characters (not counting whitespace).
 \index{whitespace}
 
+编写一个程序，读取{\tt words.txt}，然后仅仅打印出
+长度超过20个字符的单词（不计入空白字符）。
 \end{exercise}
 
 
-\section{Exercises 习题}
+\section{Exercises 练习}
 
 There are solutions to these exercises in the next section.
 You should at least attempt each one before you read the solutions.
 
-下一节有这些习题的答案。
-在你看这些答案之前，应该至少试这解决一下每个题目。
+下一节有这些练习的答案。
+在你看这些答案之前，应该至少试着解决一下每个题目。
 
 \begin{exercise}
 
@@ -9408,19 +9409,20 @@ In 1939 Ernest Vincent Wright published a 50,000 word novel called
 the most common letter in English, that's not easy to do.
 
 1939年，Ernest Vincent Wright发表了一本名为{\em Gadsby}的小说，
-该小说不包括字母``e''。由于``e''是最常用的英文字母，因此这并容易做到。
+全书没有使用字母``e''。由于``e''是最常用的英文字母，这可不是一件容易的事。
 
 In fact, it is difficult to construct a solitary thought without using
 that most common symbol.  It is slow going at first, but with caution
 and hours of training you can gradually gain facility.
 
-事实上，不使用这个最常用的符号是很难的。
-开始进展缓慢，但是经过认真的长时间的训练，你可以逐渐地熟练。
+事实上，要想不使用这个最常见的符号来表达任何思想都是很难的。
+开始时进展会很缓慢，但是只要小心注意并经过长时间的训练，你可以逐渐地熟练。
 
 All right, I'll stop now.
 
-好的，现在我将停下。
+好的，我不废话了。
 
+%Last time
 Write a function called \verb"has_no_e" that returns {\tt True} if
 the given word doesn't have the letter ``e'' in it.
 
@@ -9860,7 +9862,7 @@ expressing it as an instance of a previously-solved problem.
 \end{description}
 
 
-\section{Exercises}
+\section{Exercises 习题}
 
 \begin{exercise}
 \index{Car Talk}
@@ -11300,7 +11302,7 @@ string should be split.
 \end{description}
 
 
-\section{Exercises}
+\section{Exercises 习题}
 
 \begin{exercise}
 Write a function called \verb"is_sorted" that takes a list as a
@@ -12623,7 +12625,7 @@ interpreter something about a variable.
 
 \end{description}
 
-\section{Exercises}
+\section{Exercises 习题}
 
 \begin{exercise}
 \index{duplicate}
@@ -13718,7 +13720,7 @@ size and composition of a data structure.
 \end{description}
 
 
-\section{Exercises}
+\section{Exercises 习题}
 
 \begin{exercise}
 
@@ -14958,7 +14960,7 @@ possible inputs.
 \end{description}
 
 
-\section{Exercises}
+\section{Exercises 习题}
 
 \begin{exercise}
 \index{word frequency}
@@ -16101,7 +16103,7 @@ with keys that correspond to values.
 \end{description}
 
 
-\section{Exercises}
+\section{Exercises 习题}
 
 \begin{exercise}
 \label{urllib}
@@ -16926,7 +16928,7 @@ attributes, and the values of the attributes.
 \end{description}
 
 
-\section{Exercises 练习}
+\section{Exercises 习题}
 
 \begin{exercise}
 \label{canvas}
@@ -17622,7 +17624,7 @@ execution of a program.
 \end{description}
 
 
-\section{Exercises 练习}
+\section{Exercises 习题}
 
 Code examples from this chapter are available from
 \url{http://thinkpython.com/code/Time1.py}; solutions to these
@@ -18696,7 +18698,7 @@ the representation of its attributes.
 
 \end{description}
 
-\section{Exercises 练习}
+\section{Exercises 习题}
 
 \begin{exercise}
 \index{default value!avoiding mutable}
@@ -20003,7 +20005,7 @@ of another class.
 \end{description}
 
 
-\section{Exercises 练习}
+\section{Exercises 习题}
 
 \begin{exercise}
 \label{poker}
@@ -21461,7 +21463,7 @@ occurs in the widget.
 \end{description}
 
 
-\section{Exercises 练习}
+\section{Exercises 习题}
 
 \begin{exercise}
 \index{image viewer}
