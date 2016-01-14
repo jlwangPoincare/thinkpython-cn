@@ -237,6 +237,22 @@ Version \theversion
 % END OF THE PART WE SKIP FOR PLASTEX
 
 
+%TODO 中英文混排原则：
+%       承袭自原译者车万翔老师，由译者jlwang改进并订立成规
+%
+%       1. 章节名直接使用中英文混排，英文在前中文在后
+%       2. 不必翻译的专有名词，如编程语言名称（Java, Python），非耳熟能详
+%           的人名（Allen Downey, Jeff Alkner），及部分缩写词（GNU），直接
+%           使用英文。以惯用中文的读者能够理解原意为准则。
+%       3. 可以进行翻译却较难表达出本意的专有名词、单词、词组，翻译成中文
+%           并用（中文）括号在后面附注上英文。如有必要还可以用脚注形式进行
+%           进一步说明，以尽量表达出作者原意为准则。
+%       4. 原文使用英文数字处，尽量使用中文数字；原文使用阿拉伯数字处，尽
+%           量使用阿拉伯数字。不拘泥，以形式美观为准则。
+%       5. 在中文语境中已存在较完善、流传较广的翻译方式的词语、专有名词、
+%           人名等，直接使用中文，如福尔摩斯，《四签名》。
+%       6. 译者自行掌握尺度，不必拘泥于某一条原则。
+
 \chapter{Preface 前言}
 
 \section*{The strange history of this book 本书与众不同的历史}
@@ -246,9 +262,9 @@ class in Java.  I had taught it three times and I was getting
 frustrated.  The failure rate in the class was too high and, even for
 students who succeeded, the overall level of achievement was too low.
 
-1999年1月，我正准备使用Java教一门编程入门课程。
-我之前已经教了三次，并且感到很沮丧。
-课程的不及格率太高，即使对于及格的学生，整体的收获也太低。
+1999年1月，我正准备使用Java教一门编程的入门课程。
+我之前已经教了三次，然而我总是很受打击。
+课程的不及格率太高，即使对于及格的学生，他们的整体收获也相当不足。
 
 One of the problems I saw was the books.  
 They were too big, with too much unnecessary detail about Java, and
@@ -258,12 +274,15 @@ proceed gradually, and then somewhere around Chapter 5 the bottom would
 fall out.  The students would get too much new material, too fast,
 and I would spend the rest of the semester picking up the pieces.
 
-我看到的问题之一是教材。
-它们都太大了，有太多不必要的关于Java的细节，
-并且缺乏关于如何编程的上层的指导。
+就我所见，一个问题在于教材。
+Java的教材基本上都是大部头，包含了过多不必要的Java的细节，
+而缺乏编程方法上高屋建瓴的指导。
+%TODO 一个很难翻译的段落
 同时，它们都在陷阱门效应（trap door effect）上栽了跟头，即从简单之处开始，并逐渐深入，
 然后，大概到第五章左右，后面的学生开始掉队了。
-学生们得看太多的材料，进展太快，然后我在剩下的学期内就得用大量时间复习一些碎片知识。
+%试改译为：并且它们都有陷阱效应的问题：这些书开头很简单，往后逐渐深入，然后到了第五章
+%左右，地板突然就像陷阱一样掉下去了。
+学生们必须以飞快的速度阅读过多的新材料，结果我在剩下的学期内就得用大量时间复习一些碎片知识。
 
 Two weeks before the first day of classes, I decided to write my
 own book.  
@@ -277,23 +296,24 @@ My goals were:
 \item Keep it short.  It is better for students to read 10 pages
 than not read 50 pages.
 
-\item 尽量简短。让学生读10页比给他们50页但不读好。
+\item 尽量简短。对学生来说读10页书比有50页书要读却不读更好。
 
 \item Be careful with vocabulary.  I tried to minimize the jargon
 and define each term at first use.
 
-\item 关注术语使用。我试图使用最少的术语并且在第一次使用的时候给出定义。
+\item 注意术语使用。我试图使用最少的术语并且在第一次使用时给出定义。
 
 \item Build gradually. To avoid trap doors, I took the most difficult
 topics and split them into a series of small steps. 
 
-\item 循序渐进。为了避免陷阱门，我将最难的主题拆分成一系列小的步骤。
+%TODO 出现“陷阱门”
+\item 循序渐进。为了避免陷阱门，我将最难的内容拆分成一系列小的步骤。
 
 \item Focus on programming, not the programming language.  I included
 the minimum useful subset of Java and left out the rest.
 
-\item 聚焦于编程，而不是编程语言。我只涵盖了Java最小的有用的子集，
-忽略了其余的。
+\item 关注编程，而不是编程语言。我只涵盖了Java最小的有用的子集，
+忽略了其余部分。
 
 \end{itemize}
 
@@ -307,9 +327,9 @@ and they understood enough that I could spend class time on the hard
 topics, the interesting topics and (most important) letting the
 students practice.
 
-第一版很粗糙，但是它有效。学生们读它，并且他们足够理解它。
-于是我可以将上课时间花在那些难的、有趣的主题上，
-并且让学生们实践（这点最重要）。
+虽说书的第一版很粗糙，但是它已经起作用了。学生们这下都好好读了书，
+并且他们也理解得挺不错，于是我可以将课堂时间花在那些难的、有趣的主题上，
+并且（最重要的是）能够花时间让学生们实践。
 
 I released the book under the GNU Free Documentation License,
 which allows users to copy, modify, and distribute the book.
@@ -317,7 +337,7 @@ which allows users to copy, modify, and distribute the book.
 \index{Free Documentation License, GNU}
 
 我将此书以GNU自由文档许可的形式发布，
-该许可允许用户拷贝、修改并且发布此书。
+该许可允许用户对此书进行复制、修改以及传播。
 
 What happened next is the cool part.  Jeff Elkner, a high school
 teacher in Virginia, adopted my book and translated it into
@@ -326,11 +346,11 @@ unusual experience of learning Python by reading my own book.
 As Green Tea Press, I published the first Python version in 2001.
 \index{Elkner, Jeff}
 
-接下来发生的非常棒。
-弗吉尼亚一所高中的教师，Jeff Elkne修改了我的书并且翻译成了Python。
-他将他的翻译发给了我一份，我有了一个与众不同的学习Python的体验，
-即通过读我自己的书。
-2001年，通过绿茶出版社（Green Tea Press），我发表了本书的第一个Python版本。
+接下来发生的事情更有意思了。
+弗吉尼亚州的一位高中教师，Jeff Elkner修改了我的书并且翻译成了Python。
+他将他的翻译发给了我一份，于是我通过读我自己的书，获得了一份与众不同
+的学习Python的体验。
+2001年，通过绿茶出版社（Green Tea Press），我出版了第一个Python版本。
 
 In 2003 I started teaching at Olin College and I got to teach
 Python for the first time.  The contrast with Java was striking.
@@ -339,21 +359,21 @@ projects, and generally had a lot more fun.
 \index{Olin College}
 
 2003年，我开始在Olin College教书，并且第一次教Python。
-与教Java的对比很显著，学生需要付出的努力更少，学到的更多，
-他们致力于更有趣的项目，并且通常更快乐。
+这与教Java有很明显的不同，学生经历的困难更少，学到的东西更多，
+他们致力于更有趣的项目，并且，通常来说，获得了更多的快乐。
 
 Over the last nine years I continued to develop the book,
 correcting errors, improving some of the examples and
 adding material, especially exercises.
 
-过去9年我一直在改进这本书，纠正一些错误，改进一些实例，
+过去9年我一直在完善此书，纠正一些错误，改进一些实例，
 增加一些材料，特别是练习题。
 
 The result is this book, now with the less grandiose title
 {\em Think Python}.  Some of the changes are:
 
-最后结果就是这本书，现在有了一个更具体的名字《Think Python》。
-下面是一些变化：
+最后结果就是当下这本书，现在有了一个不那么宏大的名字《Think Python》。
+这些改动包括：
 
 \begin{itemize}
 
@@ -361,16 +381,17 @@ The result is this book, now with the less grandiose title
   These sections present general techniques for finding and avoiding
   bugs, and warnings about Python pitfalls.
   
-\item 每章最后，我都增加了一节关于调试（debugging）的内容。
-这些小节给出关于发现和避免一些错误的通常的技术，
-以及关于Python陷阱的警告。
+\item 每章最后，我都增加了一节关于调试的内容。
+这些小节会讲述通常用来发现和避免错误的技术，
+以及关于Python的一些缺陷的警告。
 
 \item I added more exercises, ranging from short tests of
   understanding to a few substantial projects.  And I wrote
   solutions for most of them.
 
-\item 增加了更多的练习题，涵盖了从为了理解的简短的测试到真正的项目。
-并且为其中大部分写了答案。
+\item 我增加了更多的练习题，以较大的跨度涵盖了，从测试理解程度的小问题，
+到真正的大项目都包括在内的大量内容。
+并且为其中大部分编写了解答。
 
 \item I added a series of case studies---longer examples with
   exercises, solutions, and discussion.  Some are based on
@@ -378,15 +399,15 @@ The result is this book, now with the less grandiose title
   Swampy, code examples, and some solutions are available from
   \url{http://thinkpython.com}.
   
-\item 我增加了一系列范例分析（case studies），
+\item 我增加了一系列案例学习（case studies），
 即具有练习、答案以及讨论的更长的样例。
-其中一些基于Swampy，我写的一套用于我的课程的Python程序。
-Swampy、代码样例、以及一些答案可以从 \url{http://thinkpython.com} 获得。
+其中一些基于我写的一套叫做Swampy的，用于我的课程的Python程序。
+Swampy、代码示例、以及一些解答可以从 \url{http://thinkpython.com} 获得。
 
 \item I expanded the discussion of program development plans
   and basic design patterns.
 
-\item 我扩展了关于程序开发规划和基本设计模式的讨论。
+\item 我增加了关于程序开发方案和基本设计模式的讨论。
 
 \item I added appendices about debugging, analysis of algorithms, and
   UML diagrams with Lumpy.
@@ -399,8 +420,8 @@ I hope you enjoy working with this book, and that it helps
 you learn to program and think, at least a little bit, like
 a computer scientist.
 
-我希望你能使用该书愉快的工作，也希望它能帮助你学习编程和思考，
-至少有那么点像一个计算机科学家。
+我希望你能愉快地利用此书工作，也希望它能帮助你学到，至少有那么一点儿，
+像计算机科学家一样编程和思考。
 
 Allen B. Downey \\
 Needham MA\\
@@ -410,7 +431,7 @@ the Franklin W. Olin College of Engineering.
 
 Allen Downey是Franklin W. Olin工学院一名计算机科学教授。
 
-\section*{Acknowledgments}
+\section*{Acknowledgments 致谢}
 
 Many thanks to Jeff Elkner, who
 translated my Java book into Python, which got this project
@@ -438,7 +459,7 @@ versions of this book and all the contributors (listed
 below) who sent in corrections and suggestions.
 
 
-\section*{Contributor List}
+\section*{Contributor List 贡献者名单}
 
 \index{contributors}
 More than 100 sharp-eyed and thoughtful readers have sent in
@@ -801,6 +822,7 @@ some broken links.
 % START THE BOOK
 \mainmatter
 
+%Last time: Refining
 \chapter{The way of the program 编程的方法}
 
 The goal of this book is to teach you to think like a
@@ -9356,7 +9378,7 @@ we can get rid of it with the string method {\tt strip}:
 
 下一个单词是``aah''，它是一个完全合法的单词，
 所以不要那样盯着我。
-或者说，如果让你困扰的其实是空白字符，
+或者说，让你困扰的其实是空白字符的话，
 我们可以用字符串方法{\tt strip}删掉它：
 
 \begin{verbatim}
@@ -9422,23 +9444,22 @@ All right, I'll stop now.
 
 好的，我不废话了。
 
-%Last time
 Write a function called \verb"has_no_e" that returns {\tt True} if
 the given word doesn't have the letter ``e'' in it.
 
-写一个称作\verb"has_no_e"的函数，如果给定的单词中不包含字母``e''，其返回{\tt True}
+写一个名为\verb"has_no_e"的函数，如果给定的单词中不包含字母``e''，其返回{\tt True}
 
 Modify your program from the previous section to print only the words
 that have no ``e'' and compute the percentage of the words in the list
 have no ``e.''
 \index{lipogram}
 
-修改你前面小节中的程序以只打印不包含``e''的单词，
-并且计算列表中不含``e''的单词的百分百。
+修改你前一节中的程序，只打印不包含``e''的单词，
+并且计算不含``e''的单词在词表中所占的百分比。
 
 \end{exercise}
 
-
+%Last time
 \begin{exercise} 
 
 Write a function named {\tt avoids}
