@@ -244,8 +244,9 @@ Version \theversion
 %       2. 不必翻译的专有名词，如编程语言名称（Java, Python），非耳熟能详
 %           的人名（Allen Downey, Jeff Alkner），及部分缩写词（GNU），直接
 %           使用英文。以惯用中文的读者能够理解原意为准则。
-%       3. 可以进行翻译却较难表达出本意的专有名词、单词、词组，翻译成中文
-%           并用（中文）括号在后面附注上英文。如有必要还可以用脚注形式进行
+%       3. 可以进行翻译却较难表达出本意的专有名词、单词、词组（不仅仅包括
+%           术语，难表达的都算），翻译成中文
+%           并用中文括号在后面附注上英文。如有必要还可以用脚注形式进行
 %           进一步说明，以尽量表达出作者原意为准则。
 %       4. 原文使用英文数字处，尽量使用中文数字；原文使用阿拉伯数字处，尽
 %           量使用阿拉伯数字。不拘泥，以形式美观为准则。
@@ -279,9 +280,9 @@ and I would spend the rest of the semester picking up the pieces.
 这些教材的内容大都过于多而繁杂，包含了太多不必要的Java的细节，
 而缺乏编程方法上高屋建瓴的指导。
 % TODO 仍然是一个很难译的段落。trap door并不是陷阱，而是屋里通向地下室
-% 的门。这里指的大概是打开地下室的门，往下走，一开始没什么，越走越深，
+% 的门，一般中文里会翻译为活板门。这里指的大概是打开地下室的门，往下走，一开始没什么，越走越深，
 % 然后突然就什么都看不见了。
-而且它们都有地板门效应的问题：这些书开头很简单，往后逐渐深入，然后到了第五章
+而且它们都有活板门效应（trap door effect）的问题：这些书开头很简单，往后逐渐深入，然后到了第五章
 左右，情况突然就变得很糟糕了。
 学生们必须以飞快的速度阅读过多的新材料，而在学期内剩下的时间里，
 我只能讲授一些碎片知识。
@@ -308,8 +309,8 @@ and define each term at first use.
 \item Build gradually. To avoid trap doors, I took the most difficult
 topics and split them into a series of small steps. 
 
-%TODO 出现“陷阱门”
-\item 循序渐进。为了避免地板门问题，我将最难的内容拆分成一系列小的步骤。
+%TODO 出现trap door
+\item 循序渐进。为了避免活板门问题，我将最难的内容拆分成一系列小的步骤。
 
 \item Focus on programming, not the programming language.  I included
 the minimum useful subset of Java and left out the rest.
@@ -322,7 +323,8 @@ the minimum useful subset of Java and left out the rest.
 I needed a title, so on a whim I chose {\em How to Think Like
 a Computer Scientist}.
 
-我需要一个标题，所以一时兴起，我选择了《如何像计算机科学家一样思考》。
+我需要一个标题，所以一时兴起，我选择了《如何像计算机科学家一样思考》
+（{\em How to Think Like a Computer Scientist}）。
 
 My first version was rough, but it worked.  Students did the reading,
 and they understood enough that I could spend class time on the hard
@@ -338,8 +340,8 @@ which allows users to copy, modify, and distribute the book.
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
 
-我将此书以GNU自由文档许可的形式发布，
-该许可允许用户对此书进行复制、修改以及传播。
+我将此书以GNU自由文档许可证（GNU Free Documentation License）
+的形式发布，该许可协议允许用户对此书进行复制、修改以及传播。
 
 What happened next is the cool part.  Jeff Elkner, a high school
 teacher in Virginia, adopted my book and translated it into
@@ -440,9 +442,16 @@ started and introduced me to what has turned out to be my
 favorite language.
 \index{Elkner, Jeff}
 
+非常感谢Jeff Elkner，他帮我将Java版本的原书翻译成了Python，
+正是此举实质上启动了这本书的大工程，也引领着我邂逅了我最喜欢的
+语言。
+
 Thanks also to Chris Meyers, who contributed several sections
 to {\em How to Think Like a Computer Scientist}.
 \index{Meyers, Chris}
+
+同样感谢Chris Meyers，他撰写了《如何像计算机科学家一样思考》
+的数个小节。
 
 Thanks to the Free Software Foundation for developing
 the GNU Free Documentation License, which helped make
@@ -452,12 +461,22 @@ Commons for the license I am using now.
 \index{Free Documentation License, GNU}
 \index{Creative Commons}
 
+感谢自由软件基金会（Free Software Foundation）的GNU自由文档
+许可证（GNU Free Documentation License），它使得我能够与Jeff和
+Chris合作，同样感谢知识共享（Creative Commons）提供当前使用
+的许可协议。
+
 Thanks to the editors at Lulu who worked on
 {\em How to Think Like a Computer Scientist}.
+
+感谢Lulu的编辑们为《如何像计算机科学家一样思考》付出的工作。
 
 Thanks to all the students who worked with earlier
 versions of this book and all the contributors (listed
 below) who sent in corrections and suggestions.
+
+感谢所有使用本书早期版本的学生们，也感谢下列提供修改与建议的
+贡献者们。
 
 
 \section*{Contributor List 贡献者名单}
