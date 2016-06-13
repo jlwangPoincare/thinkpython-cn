@@ -237,8 +237,8 @@ Version \theversion
 % END OF THE PART WE SKIP FOR PLASTEX
 
 
-%TODO 中英文混排原则：
-%       承袭自原译者车万翔老师，由译者jlwang改进并订立成规
+%TODO 中英文混排及翻译原则：
+%       承袭自原译者车万翔老师
 %
 %       1. 章节名直接使用中英文混排，英文在前中文在后
 %       2. 不必翻译的专有名词，如编程语言名称（Java, Python），非耳熟能详
@@ -251,20 +251,21 @@ Version \theversion
 %           量使用阿拉伯数字。不拘泥，以形式美观为准则。
 %       5. 在中文语境中已存在较完善、流传较广的翻译方式的词语、专有名词、
 %           人名等，直接使用中文，如福尔摩斯，《四签名》。
-%       6. 译者自行掌握尺度，不必拘泥于某一条原则。
+%       6. 在保留原意的基础上，尽量避免翻译腔，尽量使语句接近正常的中文。
+%       7. 译者自行掌握尺度，不必拘泥于某一条原则。
 
 \chapter{Preface 前言}
 
-\section*{The strange history of this book 本书与众不同的历史}
+\section*{The strange history of this book 本书与众不同的来历}
 
 In January 1999 I was preparing to teach an introductory programming
 class in Java.  I had taught it three times and I was getting
 frustrated.  The failure rate in the class was too high and, even for
 students who succeeded, the overall level of achievement was too low.
 
-1999年1月，我正准备使用Java教一门编程的入门课程。
-我之前已经教了三次，然而我总是很受打击。
-课程的不及格率太高，即使对于及格的学生，他们的整体收获也相当不足。
+那是1999年1月，我正为一门Java语言的编程入门课程备课。
+在那之前，这门课我已经教过三遍了，到那时我已经有点沮丧的感觉了。
+班上不及格的比例过高，即使对于及格的学生，他们的整体收获也相当不足。
 
 One of the problems I saw was the books.  
 They were too big, with too much unnecessary detail about Java, and
@@ -274,21 +275,22 @@ proceed gradually, and then somewhere around Chapter 5 the bottom would
 fall out.  The students would get too much new material, too fast,
 and I would spend the rest of the semester picking up the pieces.
 
-就我所见，一个问题在于教材。
-Java的教材基本上都是大部头，包含了过多不必要的Java的细节，
+就我所见，其中一个问题出在教材上。
+这些教材的内容大都过于多而繁杂，包含了太多不必要的Java的细节，
 而缺乏编程方法上高屋建瓴的指导。
-%TODO 一个很难翻译的段落
-同时，它们都在陷阱门效应（trap door effect）上栽了跟头，即从简单之处开始，并逐渐深入，
-然后，大概到第五章左右，后面的学生开始掉队了。
-%试改译为：并且它们都有陷阱效应的问题：这些书开头很简单，往后逐渐深入，然后到了第五章
-%左右，地板突然就像陷阱一样掉下去了。
-学生们必须以飞快的速度阅读过多的新材料，结果我在剩下的学期内就得用大量时间复习一些碎片知识。
+% TODO 仍然是一个很难译的段落。trap door并不是陷阱，而是屋里通向地下室
+% 的门。这里指的大概是打开地下室的门，往下走，一开始没什么，越走越深，
+% 然后突然就什么都看不见了。
+而且它们都有地板门效应的问题：这些书开头很简单，往后逐渐深入，然后到了第五章
+左右，情况突然就变得很糟糕了。
+学生们必须以飞快的速度阅读过多的新材料，而在学期内剩下的时间里，
+我只能讲授一些碎片知识。
 
 Two weeks before the first day of classes, I decided to write my
 own book.  
 My goals were:
 
-在开始上课前两周，我决定写一本自己的书。
+在开始上课前两周，我决定自己写一本书。
 我的目标是：
 
 \begin{itemize}
@@ -296,24 +298,24 @@ My goals were:
 \item Keep it short.  It is better for students to read 10 pages
 than not read 50 pages.
 
-\item 尽量简短。对学生来说读10页书比有50页书要读却不读更好。
+\item 尽量简短。对学生来说，读完10页书比读不完50页更好。
 
 \item Be careful with vocabulary.  I tried to minimize the jargon
 and define each term at first use.
 
-\item 注意术语使用。我试图使用最少的术语并且在第一次使用时给出定义。
+\item 注意术语使用。我尽量使用最少的术语并且在第一次使用时给出定义。
 
 \item Build gradually. To avoid trap doors, I took the most difficult
 topics and split them into a series of small steps. 
 
 %TODO 出现“陷阱门”
-\item 循序渐进。为了避免陷阱门，我将最难的内容拆分成一系列小的步骤。
+\item 循序渐进。为了避免地板门问题，我将最难的内容拆分成一系列小的步骤。
 
 \item Focus on programming, not the programming language.  I included
 the minimum useful subset of Java and left out the rest.
 
 \item 关注编程，而不是编程语言。我只涵盖了Java最小的有用的子集，
-忽略了其余部分。
+抛弃了其余部分。
 
 \end{itemize}
 
@@ -346,11 +348,11 @@ unusual experience of learning Python by reading my own book.
 As Green Tea Press, I published the first Python version in 2001.
 \index{Elkner, Jeff}
 
-接下来发生的事情更有意思了。
-弗吉尼亚州的一位高中教师，Jeff Elkner修改了我的书并且翻译成了Python。
-他将他的翻译发给了我一份，于是我通过读我自己的书，获得了一份与众不同
-的学习Python的体验。
-2001年，通过绿茶出版社（Green Tea Press），我出版了第一个Python版本。
+接下来就是很有意思的地方了。
+弗吉尼亚州的一位高中教师，Jeff Elkner采用了我的书并且翻译成了Python版本。
+他将他的翻译发给了我一份，于是我获得了一种与众不同的体验，竟然是
+通过读我自己的书学习了Python。
+2001年，通过绿茶出版社（Green Tea Press），我出版了此书的第一个Python版本。
 
 In 2003 I started teaching at Olin College and I got to teach
 Python for the first time.  The contrast with Java was striking.
@@ -359,8 +361,8 @@ projects, and generally had a lot more fun.
 \index{Olin College}
 
 2003年，我开始在Olin College教书，并且第一次教Python。
-这与教Java有很明显的不同，学生经历的困难更少，学到的东西更多，
-他们致力于更有趣的项目，并且，通常来说，获得了更多的快乐。
+这与教Java有很明显的不同，学生们经历的困难更少了，学到的东西更多了，
+于是也可以做些更有趣的项目，并且，基本上在学习中感受到了更多的乐趣。
 
 Over the last nine years I continued to develop the book,
 correcting errors, improving some of the examples and
@@ -372,7 +374,7 @@ adding material, especially exercises.
 The result is this book, now with the less grandiose title
 {\em Think Python}.  Some of the changes are:
 
-最后结果就是当下这本书，现在有了一个不那么宏大的名字《Think Python》。
+最后结果就是当下这本书，《Think Python》，这下名字不那么宏大了。
 这些改动包括：
 
 \begin{itemize}
@@ -382,15 +384,14 @@ The result is this book, now with the less grandiose title
   bugs, and warnings about Python pitfalls.
   
 \item 每章最后，我都增加了一节关于调试的内容。
-这些小节会讲述通常用来发现和避免错误的技术，
-以及关于Python的一些缺陷的警告。
+在这些小节里讲述发现和避免错误的一般技巧，
+以及一些关于Python的缺陷的警告。
 
 \item I added more exercises, ranging from short tests of
   understanding to a few substantial projects.  And I wrote
   solutions for most of them.
 
-\item 我增加了更多的练习题，以较大的跨度涵盖了，从测试理解程度的小问题，
-到真正的大项目都包括在内的大量内容。
+\item 我增加了更多的练习题，既有关于知识理解的小测试，也有少量的大工程。
 并且为其中大部分编写了解答。
 
 \item I added a series of case studies---longer examples with
@@ -401,13 +402,13 @@ The result is this book, now with the less grandiose title
   
 \item 我增加了一系列案例学习（case studies），
 即具有练习、答案以及讨论的更长的样例。
-其中一些基于我写的一套叫做Swampy的，用于我的课程的Python程序。
+其中一些基于Swampy包，Swampy是我写的一套用于我的课程的Python程序。
 Swampy、代码示例、以及一些解答可以从 \url{http://thinkpython.com} 获得。
 
 \item I expanded the discussion of program development plans
   and basic design patterns.
 
-\item 我增加了关于程序开发方案和基本设计模式的讨论。
+\item 我扩充了关于程序开发方案和基本设计模式的讨论部分。
 
 \item I added appendices about debugging, analysis of algorithms, and
   UML diagrams with Lumpy.
@@ -420,8 +421,8 @@ I hope you enjoy working with this book, and that it helps
 you learn to program and think, at least a little bit, like
 a computer scientist.
 
-我希望你能愉快地利用此书工作，也希望它能帮助你学到，至少有那么一点儿，
-像计算机科学家一样编程和思考。
+我希望你能够愉快地读这本书，也希望它能帮助你学会编程以及，至少有那么一点儿，
+像计算机科学家一样思考。
 
 Allen B. Downey \\
 Needham MA\\
@@ -822,8 +823,7 @@ some broken links.
 % START THE BOOK
 \mainmatter
 
-%Last time: Refining
-\chapter{The way of the program 编程的方法}
+\chapter{The way of the program 编程之路}
 
 The goal of this book is to teach you to think like a
 computer scientist.  This way of thinking combines some of the best features
@@ -836,10 +836,10 @@ predictions.
 \index{problem solving}
 
 本书的目标是教你像计算机科学家一样思考。
-这一思考的方式集成了数学、工程以及自然科学的一些最好的特点。
+这一思考方式可谓集数学、工科、理科之大成。
 像数学家一样，计算机科学家使用形式语言表示思想（特别是计算）。
-像工程师一样，计算机科学家设计东西，将零件组成系统，在各种选择之间寻求平衡。
-像科学家一样，计算机科学家观察复杂系统的行为，形成假设并且对预测进行检验。
+像工程师一样，计算机科学家进行设计，将零件组成系统，在各种选择之间寻求平衡。
+像科学家一样，计算机科学家观察复杂系统的行为，提出假设并且对预测进行检验。
 
 The single most important skill for a computer scientist is {\bf
 problem solving}.  Problem solving means the ability to formulate
@@ -848,17 +848,17 @@ and accurately.  As it turns out, the process of learning to program is an
 excellent opportunity to practice problem-solving skills.  That's why
 this chapter is called, ``The way of the program.''
 
-对于计算机科学家，唯一最重要的技能是{\bf 解决问题（problem solving）}。
-解决问题意味着对问题进行形式化、对解决方案创新地思考以及清晰、精确地表达解决方案的能力。
-事实证明，学习编程的过程是一个极佳的实践解决问题技能的机会。
-这也是为什么本章被称为``编程的方法''。
+对于计算机科学家，唯一也是最重要的技能是{\bf 解决问题（problem solving）}。
+所谓解决问题，即是将问题形式化、创造性地寻找解决方案以及清晰、精确地展示解决方案的能力。
+事实证明，对于解决问题这一技能，学习编程的过程是极佳的练习机会。
+这也是本章被称为``编程之路''的原因。
 
 On one level, you will be learning to program, a useful
 skill by itself.  On another level, you will use programming as a means to
 an end.  As we go along, that end will become clearer.
 
 一个层面上，你将学习编程，本身就是一个有用的技能。
-另一个层面上，你将使用编程作为达到目的的手段。
+另一个层面上，你将使用编程作为达到某个目的的手段。
 随着我们的深入，这一目的将变得更清晰。
 
 \section{The Python programming language Python编程语言}
@@ -869,8 +869,8 @@ The programming language you will learn is Python. Python is
 an example of a {\bf high-level language}; other high-level languages
 you might have heard of are C, C++, Perl, and Java.
 
-你将学习的编程语言是Python。Python是{\bf 高级语言（high-level language）}的一个例子；
-其它你可能听说过的高级语言包括C、C++、Perl以及Java。
+你将学习的编程语言是Python。Python是{\bf 高级语言（high-level language）}的一个实例；
+你可能听说过其它高级语言，比如说C、C++、Perl以及Java。
 
 There are
 also {\bf low-level languages}, sometimes referred to as ``machine
@@ -885,10 +885,10 @@ disadvantage of high-level languages.
 \index{language!high-level}
 \index{language!low-level}
 
-另外也有{\bf 低级语言（low-level languages）}，有时指``机器语言''或``汇编语言''。
+世间亦有{\bf 低级语言（low-level languages）}，有时也被称为``机器语言''或``汇编语言''。
 大概来讲，计算机只能运行低级语言写的程序。
-因此使用高级语言写的程序运行之前必须被处理。
-这一额外的处理过程将花些时间，这是高级语言的一个小缺点。
+因此使用高级语言写的程序必须经过处理才能运行。
+这一额外的处理过程将花费一些时间，这是高级语言的一个小缺点。
 
 The advantages are enormous.  First, it is much easier to program
 in a high-level language.  Programs written in a high-level language
@@ -898,8 +898,9 @@ portable}, meaning that they can run on different kinds of computers
 with few or no modifications.  Low-level programs can run on only one
 kind of computer and have to be rewritten to run on another.
 
-优点是巨大的。首先，使用高级语言编程要容易的多。
-高级语言程序写起来花的时间更少，它们也更短、更易读并且更有可能正确。
+%Last time: Refining
+不过优点是巨大的。首先，使用高级语言编程要容易的多。
+高级语言程序写起来花的时间更少，它们也更短而易读，并且更有可能正确。
 其次，高级语言是{\bf 可移植的（portable）}，也就是说只需很少的修改或者无需修改，
 它们就可以在不同类型的计算机上运行。
 低级语言程序只能运行于一种类型的计算机上，如果要运行于其它类型的计算机上，
