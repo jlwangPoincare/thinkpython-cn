@@ -917,13 +917,12 @@ portable}, meaning that they can run on different kinds of computers
 with few or no modifications.  Low-level programs can run on only one
 kind of computer and have to be rewritten to run on another.
 
-%Last time: Refining
 不过优点是巨大的。首先，使用高级语言编程要容易的多。
-高级语言程序写起来花的时间更少，它们也更短而易读，并且更有可能正确。
+高级语言程序写起来花的时间更少，它们也更短而易读，并且更容易写对。
 其次，高级语言是{\bf 可移植的（portable）}，也就是说只需很少的修改或者无需修改，
 它们就可以在不同类型的计算机上运行。
-低级语言程序只能运行于一种类型的计算机上，如果要运行于其它类型的计算机上，
-不得不进行重写。
+低级语言程序只能在某一种类型的计算机上运行，如果要在其它类型的计算机上运行，
+必须重写。
 
 Due to these advantages, almost all programs are written in high-level
 languages.  Low-level languages are used only for a few specialized
@@ -932,7 +931,7 @@ applications.
 \index{interpret}
 
 由于这些优点，几乎所有的程序都是用高级语言写的。
-低级语言只被用于很少的特殊应用。
+低级语言只在少数特殊情况下使用。
 
 Two kinds of programs process high-level languages into low-level
 languages: {\bf interpreters} and {\bf compilers}.  An interpreter
@@ -944,10 +943,10 @@ Figure~\ref{fig.interpret} shows the structure of an interpreter.
 \index{object code}
 \index{executable}
 
-将高级语言处理成低级语言有两种程序：{\bf 解释器（interpreters）}和{\bf 编译器（compilers）}。
-解释器读高级语言程序并且执行它，也就是说它按照程序说的去做。
-它一次只处理程序的一小段，读一行，执行计算，如此交替进行。
-图\ref{fig.interpret} 展示了一个解释器的结构。
+有两类程序可将高级语言处理成低级语言：{\bf 解释器（interpreters）}和{\bf 编译器（compilers）}。
+解释器读入高级语言程序然后立即执行，也就是说程序说什么它就做什么。
+它一次只处理程序的一小段，读一行，运行计算，如此交替进行。
+解释器的结构如图\ref{fig.interpret}所示。
 
 \begin{figure}
 \centerline
@@ -965,11 +964,11 @@ called the {\bf source code}, and the translated program is called the
 compiled, you can execute it repeatedly without further translation.
 Figure~\ref{fig.compile} shows the structure of a compiler.
 
-编译器在程序开始运行之前，读取整个程序并且将其全部翻译。
+编译器则在程序开始运行之前，读取整个程序并且将其全部翻译（成低级语言）。
 在这种情况下，高级语言程序被称为{\bf 源代码（source code）}，
 翻译后的程序被称为{\bf 目标代码（object code）}或者{\bf 可执行程序（executable）}。
-一旦一个程序被编译，你可以重复的执行它无需再翻译。
-图\ref{fig.compile} 展示了一个编译器的结构。
+一旦一个程序编译完成，你就可以重复的执行它，而无需再次翻译。
+编译器的结构如图\ref{fig.compile}所示。
 
 \begin{figure}
 \centerline
@@ -988,9 +987,9 @@ the result:
 \index{interactive mode}
 \index{script mode}
 
-Python被认为是解释性语言，因为Python程序由解释器执行。
-有两种方法使用解释器：{\bf 交互模式（interactive mode）}和{\bf 脚本模式（script mode）}。
-在交互模式下，你键入Python程序，解释器就显示结果：
+一般认为Python是解释型语言，因为Python程序是由解释器执行的。
+Python解释器有两种使用方法：{\bf 交互模式（interactive mode）}和{\bf 脚本模式（script mode）}。
+在交互模式下，你键入\footnote{译者注：``从键盘输入''的简写}Python程序语句，解释器就显示结果：
 
 \begin{verbatim}
 >>> 1 + 1
@@ -1002,16 +1001,16 @@ The chevron, \verb">>>", is the
 you type {\tt 1 + 1}, the interpreter replies {\tt 2}.
 \index{prompt}
 
-像军衔样的图标\verb">>>"是{\bf 提示符（prompt）}，解释器用其表示它准备好了。
-如果你键入{\tt 1 + 1}，解释器回复{\tt 2}。
+像军衔样的图标\verb">>>"是{\bf 提示符（prompt）}，它表示解释器正在待命。
+如果你键入{\tt 1 + 1}，解释器就会回答{\tt 2}。
 
 Alternatively, you can store code in a file and use the interpreter to
 execute the contents of the file, which is called a {\bf script}.  By
 convention, Python scripts have names that end with {\tt .py}.
 \index{script}
 
-另外，你也可以将代码存储在一个文件中，其被称为{\bf 脚本（script）}，
-然后用解释器执行这个文件的内容。习惯上，Python脚本的名字以{\tt .py}结尾。
+另一种方式\footnote{译者注：即脚本模式}下，你可以将代码存储在一个文件中，其被称为{\bf 脚本（script）}，
+然后用解释器执行这个文件的内容。习惯上，Python脚本的文件名以{\tt .py}结尾。
 
 To execute the script, you have to tell the interpreter the name of
 the file.  If you have a script named {\tt dinsdale.py} and you are
@@ -1021,19 +1020,20 @@ executing scripts are different.  You can find instructions for
 your environment at the Python website \url{http://python.org}.
 \index{testing!interactive mode}
 
-为了执行脚本，你必须告诉解释器文件名。
-如果你有一个名为{\tt dinsdale.py}的脚本并且你在UNIX命令窗口中工作，
+要执行脚本，你必须把文件名告诉解释器。
+如果你有一个名为{\tt dinsdale.py}的脚本并且你正在UNIX命令窗口中，
 你只要键入{\tt python dinsdale.py}就好了。在其它的开发环境中，
-执行脚本的细节不太一样。
-你可以在Python网站\url{http://python.org}中找到对于你的环境的说明。
+执行脚本的具体方式不尽相同。
+你可以在Python官方网站\url{http://python.org}中找到对于你的环境的说明。
 
 Working in interactive mode is convenient for testing small pieces of
 code because you can type and execute them immediately.  But for
 anything more than a few lines, you should save your code
 as a script so you can modify and execute it in the future.
 
-在交互模式中工作便于测试零散的代码，因为你可以立即键入并且执行它们。
-但是对于任何多于几行的代码来说，你应该将你的代码保存为脚本以便将来可以修改再执行。
+%Last time: Refining
+要测试很少量的代码，使用交互模式是很方便的，因为你键入就可以立即执行。
+但是对于任何超过所谓``几行''的代码来说，你都应该将你的代码保存为脚本以便修改再执行。
 
 \section{What is a program? 什么是程序？}
 
